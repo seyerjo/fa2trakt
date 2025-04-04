@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "FilmAffinity a Trakt.tv",
+  "version": "0.9",
+  "description": "Busca la película o serie de la web de FilmAffinity en la web de Trakt.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.filmaffinity.com/es/film*.html"],
+      "js": ["content.js"]
+    }
+  ]
+}
