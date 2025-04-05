@@ -1,9 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "FilmAffinity a Trakt.tv",
+  "name": "Film2Trakt",
   "version": "0.9",
-  "description": "Busca la película o serie de la web de FilmAffinity en la web de Trakt.",
+  "description": "Searches for movies or series from FilmAffinity on the Trakt website.",
   "permissions": ["activeTab"],
+  "icons": {
+    "16": "assets/fa2trakt_ico_16px.png",
+    "48": "assets/fa2trakt_ico_48px.png",
+    "128": "assets/fa2trakt_ico_128px.png"
+  },
   "content_scripts": [
     {
       "matches": ["*://www.filmaffinity.com/es/film*.html"],
