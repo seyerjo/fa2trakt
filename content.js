@@ -75,12 +75,13 @@ link.rel = "stylesheet";
 link.href =
   "https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap";
 document.head.appendChild(link);
-
 // Create a button on the FilmAffinity page.
+const titleElement = document.querySelector("h1#main-title");
+const titleSpan = titleElement.querySelector("span");
 const button = document.createElement("button");
 button.textContent = "Buscar en Trakt.tv";
-button.classList.add("trakt-search-button"); // Use a class for styling
-document.body.appendChild(button);
+button.classList.add("trakt-search-button");
+titleElement.insertBefore(button, titleSpan.nextSibling);
 
 // Add event listeners to the button
 button.addEventListener("mouseover", function () {
