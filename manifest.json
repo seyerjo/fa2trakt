@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Film2Trakt",
-  "version": "0.9",
+  "version": "0.9.5",
   "description": "Searches for movies or series from FilmAffinity on the Trakt website.",
   "permissions": ["activeTab"],
   "icons": {
