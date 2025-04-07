@@ -1,8 +1,8 @@
 # Film2Trakt
 
 <div align="left">
-	<img src="https://img.shields.io/badge/Release-v0.9-4848EC.svg" alt="Version">
-	<img src="https://img.shields.io/badge/Update-MAR%202025-F33F3F.svg" alt="Update">
+	<img src="https://img.shields.io/badge/Release-v1.0-4848EC.svg" alt="Version">
+	<img src="https://img.shields.io/badge/Update-APR%202025-F33F3F.svg" alt="Update">
 	<img src="https://img.shields.io/badge/License-Apache%202.0%20License-800000.svg" alt="License">
 	<img src="https://img.shields.io/badge/Chrome-Extension-4285F4.svg" alt="Chrome Extension">
 	<img src="https://img.shields.io/badge/Code-JavaScript-F7DF1E.svg" alt="JavaScript">
@@ -16,30 +16,24 @@ Film2Trakt is a Chrome extension that seamlessly connects [FilmAffinity website]
 
 ## Features
 
-- **One-Click Trakt Search:** Adds a button to FilmAffinity movie/series pages that, when clicked, opens a new tab with the corresponding search results on Trakt.
+- **One-Click Trakt Search:** Adds a button next to the title of the movie or series on FilmAffinity pages that, when clicked, opens a new tab with the corresponding search results on Trakt.
 - **Automatic Title Extraction:** Intelligently extracts the movie or series title from the FilmAffinity page.
-- **Series/Movie Detection:** Automatically detects from the FilmAffinity page if the item is a movie or series and redirects the search to the correct Trakt section.
+- **Series/Movie Detection:** Automatically detects if the item is a movie or series and redirects the search to the correct Trakt section.
 - **User-Friendly Interface:** Features a clearly visible and stylish button that integrates well with the FilmAffinity website.
 - **Error Handling:** Provides a user-friendly alert if the title cannot be extracted from the FilmAffinity page.
 
 ## Installation
 
 1.  Download the extension files from the GitHub repository.
-
 2.  Open Chrome and navigate to `chrome://extensions`.
-
 3.  Enable "Developer mode" in the top right corner.
-
 4.  Click "Load unpacked" and select the directory containing the extension files (where `manifest.json` is located).
-
 5.  The Film2Trakt extension is now installed and active.
 
 ## Usage
 
 1.  Browse to a movie or series page on FilmAffinity (e.g., `filmaffinity.com/en/filmXXXXXX.html`).
-
-2.  You will see a "Search on Trakt" button in the top right corner of the page.
-
+2.  You will see a "Search on Trakt" button next to the title of the movie or series on the page.
 3.  Click the button. A new tab will open, displaying the search results for the movie or series on Trakt website.
 
 ## Contributing
@@ -49,6 +43,7 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 ## Development Notes
 
 - The extension uses `content.js` to inject a button into FilmAffinity pages and handle the search functionality.
+- The `styles/main.css` file styles the button to integrate well with the FilmAffinity website.
 - The `manifest.json` file declares the extension's metadata, permissions, and content scripts.
 
 ## Technologies Used
@@ -59,14 +54,13 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 
 ## Known Issues
 
-### v0.9.5
+### v1.0
 
 - The extension relies on the specific HTML structure of FilmAffinity. Changes to the FilmAffinity website may break the extension.
 - The extension might not work correctly if the FilmAffinity page does not have a standard movie/series title.
 
 ## Future Enhancements
 
-- Add options to configure the button's appearance and position.
 - Implement more robust error handling and edge case management.
 - Potentially integrate directly with the Trakt API for more advanced functionality (e.g., adding movies/series to your watchlist).
 - Add support for other FilmAffinity language versions. The current version of the extension is designed to work with the Spanish (es) version of the FilmAffinity website.
