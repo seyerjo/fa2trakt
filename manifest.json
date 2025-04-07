@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Film2Trakt",
-  "version": "0.9.5",
+  "version": "1.0",
   "description": "Searches for movies or series from FilmAffinity on the Trakt website.",
   "permissions": ["activeTab"],
   "icons": {
@@ -12,7 +12,11 @@
   "content_scripts": [
     {
       "matches": ["*://www.filmaffinity.com/es/film*.html"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["./styles/main.css"]
     }
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
