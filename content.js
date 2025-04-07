@@ -79,7 +79,7 @@ document.head.appendChild(link);
 const titleElement = document.querySelector("h1#main-title");
 const titleSpan = titleElement.querySelector("span");
 const button = document.createElement("button");
-button.textContent = "Buscar en Trakt.tv";
+button.textContent = "Buscar en Trakt";
 button.classList.add("trakt-search-button");
 titleElement.insertBefore(button, titleSpan.nextSibling);
 
