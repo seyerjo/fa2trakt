@@ -59,7 +59,7 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 
 ## Known Issues
 
-### v0.9
+### v0.9.5
 
 - The extension relies on the specific HTML structure of FilmAffinity. Changes to the FilmAffinity website may break the extension.
 - The extension might not work correctly if the FilmAffinity page does not have a standard movie/series title.
