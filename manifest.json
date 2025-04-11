@@ -1,22 +1,23 @@
 {
-  "manifest_version": 3,
-  "name": "Film2Trakt",
-  "version": "1.0",
-  "description": "Searches for movies or series from FilmAffinity on the Trakt website.",
-  "permissions": ["activeTab"],
-  "icons": {
-    "16": "assets/fa2trakt_ico_16px.png",
-    "48": "assets/fa2trakt_ico_48px.png",
-    "128": "assets/fa2trakt_ico_128px.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://www.filmaffinity.com/es/film*.html"],
-      "js": ["content.js"],
-      "css": ["./styles/main.css"]
-    }
-  ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  }
+	"manifest_version": 3,
+	"name": "__MSG_appName__",
+	"version": "1.0",
+	"description": "__MSG_appDesc__",
+	"permissions": ["activeTab"],
+	"default_locale": "es",
+	"icons": {
+		"16": "assets/fa2trakt_ico_16px.png",
+		"48": "assets/fa2trakt_ico_48px.png",
+		"128": "assets/fa2trakt_ico_128px.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://www.filmaffinity.com/es/film*.html"],
+			"js": ["content.js"],
+			"css": ["./styles/main.css"]
+		}
+	],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'self'"
+	}
 }
