@@ -1,3 +1,4 @@
-/resources
-dev-notes.txt
-to-do.txt
+/.vscode
+/docs/dev_prompts.md
+releases/
+to_do/
