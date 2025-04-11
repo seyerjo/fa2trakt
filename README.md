@@ -1,14 +1,11 @@
 # Film2Trakt
 
-<div align="left">
-	<img src="https://img.shields.io/badge/Release-v0.9-4848EC.svg" alt="Version">
-	<img src="https://img.shields.io/badge/Update-MAR%202025-F33F3F.svg" alt="Update">
-	<img src="https://img.shields.io/badge/License-Apache%202.0%20License-800000.svg" alt="License">
-	<img src="https://img.shields.io/badge/Chrome-Extension-4285F4.svg" alt="Chrome Extension">
-	<img src="https://img.shields.io/badge/Code-JavaScript-F7DF1E.svg" alt="JavaScript">
-	<img src="https://img.shields.io/badge/Code-CSS-1572B6.svg" alt="CSS">
-	<img src="https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg" alt="Code Style: Prettier">
-</div>
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/seyerjo/fa2trakt?label=Release)](https://github.com/seyerjo/fa2trakt/releases/latest)
+[![GitHub last commit](https://img.shields.io/github/last-commit/seyerjo/fa2trakt?label=Last%20commit)](https://github.com/seyerjo/fa2trakt/commits/main)
+[![Dev Branch](https://img.shields.io/badge/Dev%20Branch-release/1.0-blue.svg)]()
+[![GitHub last commit (release/1.0)](<https://img.shields.io/github/last-commit/seyerjo/fa2trakt/release/1.0?label=Last%20commit%20(release/1.0)>)](https://github.com/seyerjo/fa2trakt/commits/release/1.0)
+[![GitHub license](https://img.shields.io/github/license/seyerjo/fa2trakt?label=License)](LICENSE)
+[![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Overview
 
