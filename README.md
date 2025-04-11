@@ -1,14 +1,9 @@
 # Film2Trakt
 
-<div align="left">
-	<img src="https://img.shields.io/badge/Release-v1.0-4848EC.svg" alt="Version">
-	<img src="https://img.shields.io/badge/Update-APR%202025-F33F3F.svg" alt="Update">
-	<img src="https://img.shields.io/badge/License-Apache%202.0%20License-800000.svg" alt="License">
-	<img src="https://img.shields.io/badge/Chrome-Extension-4285F4.svg" alt="Chrome Extension">
-	<img src="https://img.shields.io/badge/Code-JavaScript-F7DF1E.svg" alt="JavaScript">
-	<img src="https://img.shields.io/badge/Code-CSS-1572B6.svg" alt="CSS">
-	<img src="https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg" alt="Code Style: Prettier">
-</div>
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/seyerjo/fa2trakt)](https://github.com/seyerjo/fa2trakt/releases/latest)
+[![GitHub last commit](https://img.shields.io/github/last-commit/seyerjo/fa2trakt)](https://github.com/seyerjo/fa2trakt/commits/main)
+[![GitHub license](https://img.shields.io/github/license/seyerjo/fa2trakt)](LICENSE)
+[![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Overview
 
@@ -21,6 +16,7 @@ Film2Trakt is a Chrome extension that seamlessly connects [FilmAffinity website]
 - **Series/Movie Detection:** Automatically detects if the item is a movie or series and redirects the search to the correct Trakt section.
 - **User-Friendly Interface:** Features a clearly visible and stylish button that integrates well with the FilmAffinity website.
 - **Error Handling:** Provides a user-friendly alert if the title cannot be extracted from the FilmAffinity page.
+- **Internationalization (i18n) Ready:** Built with internationalization support, currently providing Spanish language (`es`) for all UI elements and messages. **Note: v1.0 only supports Spanish.**
 
 ## Installation
 
@@ -32,7 +28,7 @@ Film2Trakt is a Chrome extension that seamlessly connects [FilmAffinity website]
 
 ## Usage
 
-1.  Browse to a movie or series page on FilmAffinity (e.g., `filmaffinity.com/en/filmXXXXXX.html`).
+1.  Browse to a movie or series page on the **Spanish version** of FilmAffinity (e.g., `filmaffinity.com/es/filmXXXXXX.html`). **Note:** Currently, the extension only activates on the Spanish site (`/es/`).
 2.  You will see a "Search on Trakt" button next to the title of the movie or series on the page.
 3.  Click the button. A new tab will open, displaying the search results for the movie or series on Trakt website.
 
@@ -45,12 +41,14 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 - The extension uses `content.js` to inject a button into FilmAffinity pages and handle the search functionality.
 - The `styles/main.css` file styles the button to integrate well with the FilmAffinity website.
 - The `manifest.json` file declares the extension's metadata, permissions, and content scripts.
+- Internationalization is handled via the `_locales` directory structure and `messages.json` files, following Chrome's i18n standards.
 
 ## Technologies Used
 
 - JavaScript
 - CSS
 - Chrome Extension API
+- Chrome Extension i18n API
 
 ## Known Issues
 
@@ -62,8 +60,8 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 ## Future Enhancements
 
 - Implement more robust error handling and edge case management.
-- Potentially integrate directly with the Trakt API for more advanced functionality (e.g., adding movies/series to your watchlist).
-- Add support for other FilmAffinity language versions. The current version of the extension is designed to work with the Spanish (es) version of the FilmAffinity website.
+- Integrate directly with the Trakt API for more advanced functionality (e.g., adding movies/series to your watchlist).
+- Add support for other FilmAffinity language versions (e.g., English, Catalan) by adding corresponding `_locales/[lang]/messages.json` files and updating the `matches` pattern in `manifest.json`. The foundation for i18n is already in place with Spanish as the default.
 - Consider adding context menu integration.
 
 ## License
