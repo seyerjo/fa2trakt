@@ -1,0 +1,31 @@
+-------------
+Version (0.9)
+-------------
+[X] Create a manifest.json.
+[X] Create a content.js.
+[X] Create a README.md.
+[X] Create a LICENSE file.
+[X] Create a logo/icon for the extension.
+[X] Add the logo/icon to the manifest.json.
+[X] Test the extension.
+[X] Create a new repository on GitHub for the project.
+[X] Upload the project to the new repository on GitHub.
+
+-------------
+Version (1.0)
+-------------
+[ ] TODO: Improve the posisition and styles of the button.
+[ ] TODO: Improve the error handling.
+[ ] TODO: Improve the performance of the extension.
+[ ] TODO: New logo/icon for the extension.
+[ ] TODO: Publish the extension on the Chrome Web Store.
+
+-------------
+Version (2.0)
+-------------
+[ ] TODO: Open the equal movie or series page on Trakt using the API.
+
+-------------
+Version (3.0)
+-------------
+[ ] TODO: Add movies or series from FilmAffinity to the on Trakt Whatchlist using the API.
