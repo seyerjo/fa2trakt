@@ -4,9 +4,9 @@
 
 Film2Trakt is a Chrome extension that connects FilmAffinity with Trakt.tv, allowing users to search for movies and series on Trakt.tv directly from FilmAffinity.
 
-## Current Version
+## Current Development Version
 
-The current version of the project is v1.0.
+The current development version of the project is v1.0.
 
 ## Project Structure
 
