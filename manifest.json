@@ -6,9 +6,9 @@
 	"permissions": ["activeTab"],
 	"default_locale": "es",
 	"icons": {
-		"16": "assets/fa2trakt_ico_16px.png",
-		"48": "assets/fa2trakt_ico_48px.png",
-		"128": "assets/fa2trakt_ico_128px.png"
+		"16": "assets/images/fa2trakt_ico_16px.png",
+		"48": "assets/images/fa2trakt_ico_48px.png",
+		"128": "assets/images/fa2trakt_ico_128px.png"
 	},
 	"content_scripts": [
 		{
