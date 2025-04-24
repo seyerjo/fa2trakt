@@ -9,7 +9,7 @@
 
 Film2Trakt is a Chrome extension designed to **streamline your movie and series tracking workflow** by intelligently connecting [FilmAffinity](https://www.filmaffinity.com/) with [Trakt.tv](https://trakt.tv/). Tired of copying and pasting titles? With Film2Trakt, you can instantly search for any title from FilmAffinity on Trakt with a single click, saving you time and effort. It's the perfect tool for film and series enthusiasts who use both platforms.
 
-For a more detailed description of the project's vision and objectives, please refer to [docs/01_project_overview.md](docs/01_project_overview.md).
+For a more detailed description of the project's vision and objectives, please refer to [docs/01_project_overview.md](./docs/project_overview.md).
 
 ## Features ✨
 
