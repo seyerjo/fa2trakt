@@ -1,4 +1,6 @@
+/.archive
+/.dev_notes
+/.releases
+/.roo
 /.vscode
-/docs/dev_prompts.md
-releases/
-to_do/
+/docs
