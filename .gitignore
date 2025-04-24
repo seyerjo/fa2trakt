@@ -1,5 +1,11 @@
 /.roo
 /.vscode
+/archive
 /dev_notes
-/docs/00_documentation_generation_prompt.md
+/docs/04_project_structure.md
+/docs/06_implementation.md
+/docs/11_to_do_list.md
+/docs/12_development_notes.md
+/docs/00_project_tracking.md
+/docs/13_development_prompts.md
 /releases
