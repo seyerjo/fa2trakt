@@ -20,7 +20,7 @@ For a more detailed description of the project's vision and objectives, please r
 - ⚠️ **Basic Error Handling:** Alerts the user if there are issues extracting the title.
 - 🌍 **Internationalization (i18n) Ready:** Prepared for multiple languages. Currently supports **Spanish (`es`)** for all UI elements and messages.
 
-For a complete and detailed list of features, including edge cases and error handling, please refer to [docs/03_features.md](docs/03_features.md). For functional and non-functional requirements, check [docs/02_requirements.md](docs/02_requirements.md).
+For a complete and detailed list of features, including edge cases and error handling, please refer to [docs/03_features.md](./docs/03_features.md). For functional and non-functional requirements, check [docs/02_requirements.md](./docs/02_requirements.md).
 
 ## Installation 🚀
 
