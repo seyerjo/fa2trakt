@@ -1,6 +1,0 @@
-### Performance Optimization:
-
-- Minimize resource usage in background scripts.
-- Use event pages instead of persistent background pages when possible.
-- Implement lazy loading for non-critical extension features.
-- Optimize content scripts to minimize impact on web page performance.
