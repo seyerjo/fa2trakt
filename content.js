@@ -1,85 +1,99 @@
-// Function to extract the title from the FilmAffinity page.
+/**
+ * Extracts the title from the FilmAffinity page.
+ * @returns {string|null} The title of the movie/series or null if not found.
+ */
 function getFilmaffinityTitle() {
-  const titleElement = document.querySelector("h1#main-title span");
-  if (titleElement) {
-    return titleElement.textContent.trim();
-  }
-  return null;
+	try {
+		const titleElement = document.querySelector("h1#main-title span");
+		if (titleElement) {
+			return titleElement.textContent.trim();
+		}
+		throw new Error(chrome.i18n.getMessage("errorTitleNotFound"));
+	} catch (error) {
+		console.error(chrome.i18n.getMessage("errorGettingTitle"), error);
+		return null;
+	}
 }
 
-// Function to determine if the FilmAffinity page is for a TV series.
+/**
+ * Determines if the FilmAffinity page is for a TV series.
+ * @returns {boolean} True if it's a series, false otherwise.
+ */
 function isFilmaffinitySeries() {
-  const movieTypeSpan = document.querySelector(".movie-type");
-  if (movieTypeSpan) {
-    const typeSpan = movieTypeSpan.querySelector(".type");
-    return (
-      typeSpan &&
-      (typeSpan.textContent === "Miniserie" || typeSpan.textContent === "Serie")
-    );
-  }
-  return false;
+	try {
+		const movieTypeSpan = document.querySelector(".movie-type");
+		if (movieTypeSpan) {
+			const typeSpan = movieTypeSpan.querySelector(".type");
+			return (
+				typeSpan &&
+				(typeSpan.textContent === "Miniserie" ||
+					typeSpan.textContent === "Serie")
+			);
+		}
+		return false;
+	} catch (error) {
+		console.error(chrome.i18n.getMessage("errorDeterminingType"), error);
+		return false;
+	}
 }
 
-// Function to build the Trakt.tv search URL.
+/**
+ * Builds the Trakt.tv search URL.
+ * @param {string} title - The title of the movie/series.
+ * @returns {string|null} The Trakt.tv search URL or null if title is not provided.
+ */
 function createTraktUrl(title) {
-  if (title) {
-    const encodedTitle = encodeURIComponent(title);
-    const isSeries = isFilmaffinitySeries();
-    const searchType = isSeries ? "shows" : "movies";
-    return `https://trakt.tv/search/${searchType}?q=${encodedTitle}`;
-  }
-  return null;
+	try {
+		if (!title) throw new Error(chrome.i18n.getMessage("errorTitleRequired"));
+		const encodedTitle = encodeURIComponent(title);
+		const isSeries = isFilmaffinitySeries();
+		const searchType = isSeries ? "shows" : "movies";
+		return `https://trakt.tv/search/${searchType}?q=${encodedTitle}`;
+	} catch (error) {
+		console.error(chrome.i18n.getMessage("errorCreatingUrl"), error);
+		return null;
+	}
 }
 
-// Function to open the Trakt.tv URL in a new tab.
+/**
+ * Opens the Trakt.tv URL in a new tab.
+ * @param {string} url - The URL to open.
+ */
 function openTraktUrl(url) {
-  if (url) {
-    window.open(url, "_blank");
-  } else {
-    alert("No se pudo obtener el título de la película/serie.");
-  }
+	try {
+		if (!url) throw new Error(chrome.i18n.getMessage("errorUrlRequired"));
+		window.open(url, "_blank");
+	} catch (error) {
+		console.error(chrome.i18n.getMessage("errorOpeningUrl"), error);
+		alert(chrome.i18n.getMessage("alertCouldNotOpenUrl"));
+	}
 }
 
-// We create a style element for the Figtree font and add the style element to the head.
+// Create a style element for the Figtree font and add it to the head.
 const link = document.createElement("link");
 link.rel = "stylesheet";
 link.href =
-  "https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap";
+	"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap";
 document.head.appendChild(link);
-
-// We create a button on the FilmAffinity page.
+// Create a button on the FilmAffinity page.
+const titleElement = document.querySelector("h1#main-title");
+const titleSpan = titleElement.querySelector("span");
 const button = document.createElement("button");
-button.textContent = "Buscar en Trakt.tv";
-button.style.position = "fixed";
-button.style.top = "3px";
-button.style.right = "40px";
-button.style.zIndex = "1000"; // To be above other elements.
-button.style.backgroundColor = "#8131a4"; // A tone similar to Trakt.tv's corporate color.
-button.style.color = "#fffff9"; // Trakt.tv's characteristic white color.
-button.style.border = "none";
-button.style.padding = "10px 15px";
-button.style.borderRadius = "5px";
-button.style.cursor = "pointer";
-button.style.fontSize = "16px";
-button.style.fontFamily = "'Figtree', 'sans-serif'"; // Trakt.tv's font.
-button.style.fontWeight = "bold";
-button.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.3)"; // A subtle shadow effect.
-button.style.transition = "background-color 0.3s ease"; // Smooth transition on hover.
+button.textContent = chrome.i18n.getMessage("searchButtonText");
+button.classList.add("trakt-search-button");
+titleElement.insertBefore(button, titleSpan.nextSibling);
 
-// We add a hover effect to change slightly when hovering the mouse.
+// Add event listeners to the button
 button.addEventListener("mouseover", function () {
-  button.style.backgroundColor = "#4a5568"; // A slightly lighter tone on hover.
+	button.style.backgroundColor = "#4a5568";
 });
 
 button.addEventListener("mouseout", function () {
-  button.style.backgroundColor = "#8131a4"; // Return to the original color when not hovering the mouse.
+	button.style.backgroundColor = "#8131a4";
 });
 
-document.body.appendChild(button);
-
-// We add an event to the button so that when clicked, our logic is executed.
 button.addEventListener("click", function () {
-  const title = getFilmaffinityTitle();
-  const traktUrl = createTraktUrl(title);
-  openTraktUrl(traktUrl);
+	const title = getFilmaffinityTitle();
+	const traktUrl = createTraktUrl(title);
+	openTraktUrl(traktUrl);
 });

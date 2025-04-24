@@ -1,0 +1,46 @@
+{
+	"appName": {
+		"message": "Film2Trakt",
+		"description": "The name of the extension."
+	},
+	"appDesc": {
+		"message": "Busca películas o series de FilmAffinity en la web de Trakt.",
+		"description": "The description of the extension."
+	},
+	"searchButtonText": {
+		"message": "Buscar en Trakt",
+		"description": "Text displayed on the search button."
+	},
+	"errorGettingTitle": {
+		"message": "Error al obtener el título de FilmAffinity.",
+		"description": "Error message logged to console when title extraction fails."
+	},
+	"errorDeterminingType": {
+		"message": "Error al determinar si es una serie.",
+		"description": "Error message logged when determining if the page is for a series."
+	},
+	"errorCreatingUrl": {
+		"message": "Error al crear la URL de Trakt.",
+		"description": "Error message logged when the Trakt URL creation fails."
+	},
+	"errorOpeningUrl": {
+		"message": "Error al abrir la URL de Trakt.",
+		"description": "Error message logged when opening the Trakt URL fails."
+	},
+	"alertCouldNotOpenUrl": {
+		"message": "No se pudo abrir la URL de Trakt.tv. Comprueba tu conexión o si Trakt.tv está accesible.",
+		"description": "Alert message shown to the user when the Trakt URL cannot be opened."
+	},
+	"errorTitleNotFound": {
+		"message": "Elemento del título no encontrado en la página.",
+		"description": "Error thrown when the title element cannot be found."
+	},
+	"errorTitleRequired": {
+		"message": "El título es obligatorio para crear la URL.",
+		"description": "Error thrown when trying to create URL without a title."
+	},
+	"errorUrlRequired": {
+		"message": "La URL es obligatoria para abrirla.",
+		"description": "Error thrown when trying to open a null/empty URL."
+	}
+}
