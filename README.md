@@ -1,9 +1,7 @@
 # Film2Trakt
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/seyerjo/fa2trakt?label=Release)](https://github.com/seyerjo/fa2trakt/releases/latest)
-[![GitHub last commit](https://img.shields.io/github/last-commit/seyerjo/fa2trakt?label=Last%20commit)](https://github.com/seyerjo/fa2trakt/commits/main)
 [![Dev Branch](https://img.shields.io/badge/Dev%20Branch-release/1.5.0-blue.svg)]()
-[![GitHub last commit (release/1.0)](https://img.shields.io/github/last-commit/seyerjo/fa2trakt/release/1.0?label=Last%20commit%20Dev%20Branch&color=blue)](https://github.com/seyerjo/fa2trakt/commits/release/1.5.0)
 [![GitHub license](https://img.shields.io/github/license/seyerjo/fa2trakt?label=License)](LICENSE)
 [![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
