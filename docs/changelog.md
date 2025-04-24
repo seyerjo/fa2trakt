@@ -41,5 +41,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - (No specific bug fixes noted for the initial release compared to development stages, as features were being added).
-
-_[Note: Replace YYYY-MM-DD with the actual release date.]_
