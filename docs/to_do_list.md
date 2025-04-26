@@ -19,8 +19,6 @@ This document tracks planned tasks, potential improvements, and known issues for
 - **[ ] Options Page:**
   - Create an options page (`options.html`) accessible via the extension icon.
   - Allow users to configure settings (e.g., default action on click, API connection status if implemented).
-- **[ ] Extension Icon:**
-  - Provide a specific icon for the browser toolbar (currently uses default).
 
 ## Improvements & Refactoring
 
@@ -55,11 +53,11 @@ This document tracks planned tasks, potential improvements, and known issues for
 
 ## Documentation
 
-- **[ ] Add Code of Conduct:** Create a `CODE_OF_CONDUCT.md` file and link to it from `06_contribution_guidelines.md`.
+- **[ ] Add Code of Conduct:** Create a `code_of_conduct.md` file and link to it from `contribution_guidelines.md`.
 - **[ ] Update Setup Guide:** Add details about Node.js/npm usage if linters/build tools are introduced.
 - **[ ] Add API Documentation (if implemented):** Document API usage, authentication flow, and data structures if Trakt API integration is added.
-- **[ ] Add Diagrams:** Include recommended diagrams (Sequence, ERD if applicable later) in relevant documents like `03_project_structure.md`.
-- **[ ] Update Changelog:** Keep `09_changelog.md` updated with every new release.
+- **[ ] Add Diagrams:** Include recommended diagrams (Sequence, ERD if applicable later) in relevant documents like `project_structure.md`.
+- **[ ] Update Changelog:** Keep `changelog.md` updated with every new release.
 
 ## Deployment & Release
 
