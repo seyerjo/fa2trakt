@@ -1,6 +1,12 @@
+:root {
+	--primary-color: #8131a4;
+	--hover-color: #4a5568;
+	--text-color: #ffffff;
+}
+
 .trakt-search-button {
-	background-color: #8131a4;
-	color: #ffffff;
+	background-color: var(--primary-color);
+	color: var(--text-color);
 	border: none;
 	padding: 8px 16px;
 	border-radius: 8px;
@@ -11,6 +17,10 @@
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
 	margin-left: 10px;
+}
+
+.trakt-search-button-hover {
+	background-color: var(--hover-color) !important;
 }
 
 .trakt-search-button:hover {

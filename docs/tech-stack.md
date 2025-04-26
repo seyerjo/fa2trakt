@@ -10,7 +10,7 @@ This document explains the reasoning behind the technology choices made for the 
     - **Minimal Overhead:** Avoids adding the weight and complexity of a framework for a relatively simple task primarily involving DOM manipulation and API calls. This keeps the extension lightweight and performant.
     - **Direct API Access:** Allows direct interaction with standard Web APIs (DOM) and Chrome Extension APIs without abstraction layers.
     - **Sufficient Capability:** Modern JavaScript (ES6+) provides sufficient features (arrow functions, promises, template literals, etc.) to write clean and maintainable code for the current scope.
-  - **Interaction:** Forms the core logic within `content.js`, interacting with the DOM and Chrome APIs.
+  - **Interaction:** Forms the core logic within `content_script.js`, interacting with the DOM and Chrome APIs.
 
 - **CSS3:**
 
@@ -18,10 +18,10 @@ This document explains the reasoning behind the technology choices made for the 
     - **Simplicity:** Sufficient for the limited styling needs of the extension.
     - **Direct Application:** Easily applied to DOM elements via CSS classes defined in `styles/main.css` and linked in `manifest.json`.
     - **Performance:** Native browser rendering is highly optimized.
-  - **Interaction:** Defines the visual appearance of the `.trakt-search-button` injected by `content.js`.
+  - **Interaction:** Defines the visual appearance of the `.trakt-search-button` injected by `content_script.js`.
 
 - **HTML (via DOM Manipulation):**
-  - **Rationale:** While no separate `.html` files are used for the core functionality (like popups or options pages in this version), HTML is implicitly used when `content.js` creates and injects the button element (`document.createElement('button')`) into the FilmAffinity page's DOM.
+  - **Rationale:** While no separate `.html` files are used for the core functionality (like popups or options pages in this version), HTML is implicitly used when `content_script.js` creates and injects the button element (`document.createElement('button')`) into the FilmAffinity page's DOM.
   - **Interaction:** JavaScript creates and manipulates HTML elements within the host page's DOM.
 
 ## 2. Environment & APIs
@@ -37,13 +37,13 @@ This document explains the reasoning behind the technology choices made for the 
     - `chrome.i18n`: Chosen for native, efficient internationalization support provided by the browser itself, avoiding external libraries. Handles loading appropriate language strings based on browser settings.
     - `chrome.tabs`: Specifically `chrome.tabs.create`, selected as the simplest, most direct way to fulfill the core requirement of opening the Trakt search results in a new tab.
     - `chrome.runtime`: Used implicitly for the extension context and potentially for error information (`chrome.runtime.lastError`).
-  - **Interaction:** Called from `content.js` to perform actions like retrieving localized text and opening new tabs.
+  - **Interaction:** Called from `content_script.js` to perform actions like retrieving localized text and opening new tabs.
 
 - **Web APIs (DOM & Events):**
   - **Rationale:** Standard browser APIs are the necessary tools for interacting with the content of the FilmAffinity web page.
     - **DOM Manipulation (`document.querySelector`, `createElement`, `appendChild`, etc.):** Required to find the title and insert the button.
     - **Event Listeners (`addEventListener`):** Standard mechanism to react to user interaction (clicking the button).
-  - **Interaction:** Used extensively within `content.js` to read from and write to the FilmAffinity page structure.
+  - **Interaction:** Used extensively within `content_script.js` to read from and write to the FilmAffinity page structure.
 
 ## 3. Development & Tooling (Current & Potential)
 

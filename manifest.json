@@ -13,7 +13,7 @@
 	"content_scripts": [
 		{
 			"matches": ["*://www.filmaffinity.com/es/film*.html"],
-			"js": ["content.js"],
+			"js": ["content_script.js"],
 			"css": ["./styles/main.css"]
 		}
 	],

@@ -9,7 +9,7 @@ This document provides a detailed description of each core feature of the Film2T
 - **Functional Requirements:** FR-03
 - **Non-Functional Requirements:** NFR-01, NFR-02, NFR-03
 - **Detailed Operation:**
-  1.  Upon loading a FilmAffinity page matching the pattern `*://www.filmaffinity.com/es/film*.html` (as defined in `manifest.json`), the `content.js` script executes.
+  1.  Upon loading a FilmAffinity page matching the pattern `*://www.filmaffinity.com/es/film*.html` (as defined in `manifest.json`), the `content_script.js` script executes.
   2.  The script creates a `<button>` HTML element.
   3.  The button's text content is set using `chrome.i18n.getMessage("searchButtonText")`.
   4.  The CSS class `trakt-search-button` is added to the button for styling.
@@ -26,7 +26,7 @@ This document provides a detailed description of each core feature of the Film2T
 - **Description:** Extracts the primary title of the movie or series from the FilmAffinity page.
 - **Functional Requirements:** FR-01
 - **Detailed Operation:**
-  1.  The `getFilmaffinityTitle()` function in `content.js` is called (typically triggered by the button click handler).
+  1.  The `getFilmaffinityTitle()` function in `content_script.js` is called (typically triggered by the button click handler).
   2.  It targets the `h1` element with the ID `main-title` using `document.querySelector('h1#main-title')`.
   3.  If the element is found, its `textContent` is retrieved, trimmed of leading/trailing whitespace, and returned.
 - **Edge Cases:**
@@ -44,8 +44,8 @@ This document provides a detailed description of each core feature of the Film2T
 - **Description:** Determines if the content displayed on the FilmAffinity page is a movie or a TV series.
 - **Functional Requirements:** FR-02
 - **Detailed Operation:**
-  1.  The `isFilmaffinitySeries()` function in `content.js` is called.
-  2.  It inspects specific elements or text patterns within the FilmAffinity page DOM that typically differentiate series from movies (e.g., presence of "Serie de TV", "Miniserie" in specific `dd` tags within the technical details section, or other structural clues). _Note: The exact implementation details need verification in the current `content.js`._
+  1.  The `isFilmaffinitySeries()` function in `content_script.js` is called.
+  2.  It inspects specific elements or text patterns within the FilmAffinity page DOM that typically differentiate series from movies (e.g., presence of "Serie de TV", "Miniserie" in specific `dd` tags within the technical details section, or other structural clues). _Note: The exact implementation details need verification in the current `content_script.js`._
   3.  Based on the analysis, it returns a value indicating the type (e.g., `true` for series, `false` for movie).
 - **Edge Cases:**
   - **Ambiguous Pages:** Pages that don't clearly fit the expected structure for either movies or series might lead to incorrect detection.
@@ -102,7 +102,7 @@ This document provides a detailed description of each core feature of the Film2T
 - **Detailed Operation:**
   1.  The `manifest.json` defines `"default_locale": "es"`.
   2.  Locale files exist in `_locales/es/messages.json` containing key-value pairs for translatable strings.
-  3.  `content.js` uses `chrome.i18n.getMessage("keyName")` whenever it needs a string for the UI (button text), console logs, or error messages/alerts.
+  3.  `content_script.js` uses `chrome.i18n.getMessage("keyName")` whenever it needs a string for the UI (button text), console logs, or error messages/alerts.
   4.  Chrome automatically selects the appropriate language based on the user's browser settings and the available locale files, falling back to the `default_locale` if no match is found.
 - **Edge Cases:**
   - **Missing Key:** If `getMessage` is called with a key that doesn't exist in the selected locale file (or the default), it will typically return an empty string. The code should be somewhat resilient to this, although it might result in missing text.

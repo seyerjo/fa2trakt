@@ -85,11 +85,11 @@ titleElement.insertBefore(button, titleSpan.nextSibling);
 
 // Add event listeners to the button
 button.addEventListener("mouseover", function () {
-	button.style.backgroundColor = "#4a5568";
+	button.classList.add("trakt-search-button-hover");
 });
 
 button.addEventListener("mouseout", function () {
-	button.style.backgroundColor = "#8131a4";
+	button.classList.remove("trakt-search-button-hover");
 });
 
 button.addEventListener("click", function () {

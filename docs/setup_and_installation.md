@@ -39,7 +39,7 @@ Follow these steps if you want to contribute to the development of the extension
     - You should see the "Search on Trakt" button appear near the title.
 
 4.  **Making Changes:**
-    - If you modify the source code (e.g., `content.js`, `main.css`, `manifest.json`), you need to reload the extension for the changes to take effect.
+    - If you modify the source code (e.g., `content_script.js`, `main.css`, `manifest.json`), you need to reload the extension for the changes to take effect.
     - Go back to the `chrome://extensions` page.
     - Find the Film2Trakt extension card and click the reload icon (a circular arrow).
 
