@@ -7,9 +7,9 @@
 
 ## Overview
 
-Film2Trakt is a Chrome extension designed to **streamline your movie and series tracking workflow** by intelligently connecting [FilmAffinity](https://www.filmaffinity.com/) with [Trakt.tv](https://trakt.tv/). Tired of copying and pasting titles? With Film2Trakt, you can instantly search for any title from FilmAffinity on Trakt with a single click, saving you time and effort. It's the perfect tool for film and series enthusiasts who use both platforms.
+Film2Trakt is a Chrome extension designed to **streamline your movie and series tracking workflow** by intelligently connecting [FilmAffinity](https://www.filmaffinity.com/) with [Trakt](https://trakt.tv/). Tired of copying and pasting titles? With Film2Trakt, you can instantly search for any title from FilmAffinity on Trakt with a single click, saving you time and effort. It's the perfect tool for film and series enthusiasts who use both platforms.
 
-For a more detailed description of the project's vision and objectives, please refer to [docs/project_overview.md](./docs/project_overview.md).
+For a more detailed description of the project's vision and objectives, please refer to [project_overview.md](./docs/public/project_overview.md).
 
 ## Features ✨
 
@@ -20,7 +20,7 @@ For a more detailed description of the project's vision and objectives, please r
 - ⚠️ **Basic Error Handling:** Alerts the user if there are issues extracting the title.
 - 🌍 **Internationalization (i18n) Ready:** Prepared for multiple languages. Currently supports **Spanish (`es`)** for all UI elements and messages.
 
-For a complete and detailed list of features, including edge cases and error handling, please refer to [docs/features.md](./docs/features.md). For functional and non-functional requirements, check [docs/requirements.md](./docs/requirements.md).
+For a complete and detailed list of features, including edge cases and error handling, please refer to [features.md](./docs/public/features.md). For functional and non-functional requirements, check [requirements.md](./docs/public/requirements.md).
 
 ## Installation 🚀
 
@@ -42,7 +42,7 @@ You can install Film2Trakt in several ways:
     - Enable "Developer mode".
     - Click "Load unpacked" and select the root folder of the repository (where `manifest.json` is located).
 
-For more detailed development environment setup instructions and prerequisites, please refer to [docs/setup_and_installation.md](./docs/setup_and_installation.md).
+For more detailed development environment setup instructions and prerequisites, please refer to [setup_and_installation.md](./docs/public/setup_and_installation.md).
 
 ## Usage 🎬
 
@@ -56,7 +56,7 @@ Using Film2Trakt is very simple:
 
 3.  Click the button. A new tab will open, displaying the search results for that title on Trakt.tv.
 
-For a more complete step-by-step usage guide and basic troubleshooting, please refer to [docs/usage_guide.md](docs/usage_guide.md).
+For a more complete step-by-step usage guide and basic troubleshooting, please refer to [usage_guide.md](docs/public/usage_guide.md).
 
 ## Technologies Used 💻
 
@@ -67,7 +67,7 @@ Film2Trakt is built using the following technologies:
 - **Chrome Extension API:** For extension functionality, permissions, and tab handling.
 - **Chrome Extension i18n API:** For managing internationalization of texts.
 
-For a more detailed justification of the choice of these technologies, you can consult [docs/tech-stack.md](docs/tech-stack.md).
+For a more detailed justification of the choice of these technologies, you can consult [tech-stack.md](docs/public/tech-stack.md).
 
 ## Contributing 👋
 
@@ -76,7 +76,7 @@ Contributions are welcome! If you find a bug, have a suggestion for improvement,
 - **Report Bugs or Suggest Enhancements:** Open an [Issue on GitHub](https://github.com/seyerjo/fa2trakt/issues). Please describe the problem or suggestion with as much detail as possible.
 - **Contribute Code:** If you want to submit code, please follow our contribution process. This generally involves forking the repository, creating a branch, implementing your changes, and submitting a Pull Request.
 
-For detailed guidelines on how to contribute, setting up the development environment for collaboration, and the Pull Request process, please refer to [docs/contribution_guidelines.md](./docs/contribution_guidelines.md).
+For detailed guidelines on how to contribute, setting up the development environment for collaboration, and the Pull Request process, please refer to [contribution_guidelines.md](./docs/public/contribution_guidelines.md).
 
 ## Known Issues 🐛
 
@@ -96,7 +96,7 @@ We have several ideas for the future of Film2Trakt:
 
 ## Changelog 📜
 
-Please refer to the [CHANGELOG.md](./docs/changelog.md) file for the complete history of project changes and versions.
+Please refer to the [changelog.md](./docs/public/changelog.md) file for the complete history of project changes and versions.
 
 ## License 📄
 
