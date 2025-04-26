@@ -1,8 +1,9 @@
-/.roo
-/.vscode
 /.archive
 /.dev_notes
 /.releases
+/.roo
+/.trae
+/.vscode
 /docs/project_structure.md
 /docs/implementation.md
 /docs/to_do_list.md

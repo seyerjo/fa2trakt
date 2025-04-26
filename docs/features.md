@@ -16,8 +16,9 @@ This document provides a detailed description of each core feature of the Film2T
   5.  The script identifies the target insertion point in the DOM, typically the container element holding the main title (`h1#main-title`).
   6.  The created button is appended or inserted adjacent to this target element.
 - **Edge Cases:**
-  - **DOM Structure Change:** If FilmAffinity significantly changes the structure around the `h1#main-title`, the button might be injected in the wrong place or fail to inject. The script should ideally log an error if the target insertion point isn't found.
-  - **Multiple Injections:** The script should ideally ensure it doesn't inject the button multiple times if the content script somehow runs more than once on the same page load (e.g., due to SPA navigation if FilmAffinity were to become one, though unlikely). (Current implementation likely doesn't explicitly prevent this but relies on typical page load behavior).
+  - **DOM Structure Change:** If FilmAffinity significantly changes the structure around the `h1#main-title`, the button might be injected in the wrong place or fail to inject.
+  - **Multiple Injections:** The script currently relies on standard page load behavior and doesn't explicitly prevent multiple injections if the content script were triggered multiple times on the same logical page view (e.g., complex SPA navigation, though not applicable to current FilmAffinity).
+- **Error Handling:** Logs `errorInjectingButton` (localized) to the console using `console.error` if the target insertion point (`h1#main-title`) cannot be found.
 - **Validation Rules:** None explicitly defined beyond successful DOM insertion.
 
 ## Feature 2: Title Extraction
@@ -36,7 +37,7 @@ This document provides a detailed description of each core feature of the Film2T
 - **Validation Rules:**
   - The target DOM element (`h1#main-title`) must exist.
   - The extracted title should be a non-null string (even if empty after trimming).
-- **Error Handling:** Logs `errorGettingTitle` and throws `errorTitleNotFound` (localized) if the element is not found.
+- **Error Handling:** If the `h1#main-title` element is not found, logs `errorGettingTitle` (localized) using `console.error` and throws a new `Error` with the localized message `errorTitleNotFound`.
 
 ## Feature 3: Content Type Detection
 
@@ -50,10 +51,10 @@ This document provides a detailed description of each core feature of the Film2T
 - **Edge Cases:**
   - **Ambiguous Pages:** Pages that don't clearly fit the expected structure for either movies or series might lead to incorrect detection.
   - **DOM Structure Change:** Changes in how FilmAffinity displays type information will break this detection.
-- **Validation Rules:** The function should return a predictable value (e.g., boolean) indicating the detected type.
-- **Error Handling:** Should ideally log an error if it cannot reliably determine the type based on the expected DOM structure.
+- **Validation Rules:** The function should return a boolean value indicating the detected type.
+- **Error Handling:** If the crucial DOM elements used for detection are missing, potentially logs `errorDetectingType` (localized) using `console.warn` as it might fallback to a default (e.g., movie), but this specific logging isn't explicitly implemented in v1.0.
 
-## Feature 4: Trakt.tv URL Construction
+## Feature 4: Trakt URL Construction
 
 - **ID:** FEAT-04
 - **Description:** Creates the correct Trakt.tv search URL based on the extracted title and content type.
@@ -89,9 +90,8 @@ This document provides a detailed description of each core feature of the Film2T
 - **Validation Rules:**
   - Input `url` must be a non-empty, valid URL string.
 - **Error Handling:**
-  - Logs `errorOpeningUrl` (localized) if `chrome.tabs.create` fails (e.g., due to `chrome.runtime.lastError`).
-  - Shows a localized `alert()` (`alertCouldNotOpenUrl`) to the user on failure.
-  - Throws `errorUrlRequired` (localized) if the URL is missing.
+  - If the `url` parameter is missing or empty, logs `errorOpeningUrl` (localized) using `console.error` and throws a new `Error` with the localized message `errorUrlRequired`.
+  - After calling `chrome.tabs.create`, it checks `chrome.runtime.lastError`. If an error exists, it logs the error object and the localized message `errorOpeningUrl` using `console.error`, and displays a browser alert to the user with the localized message `alertCouldNotOpenUrl`.
 
 ## Feature 6: Internationalization (i18n)
 
@@ -105,6 +105,7 @@ This document provides a detailed description of each core feature of the Film2T
   3.  `content_script.js` uses `chrome.i18n.getMessage("keyName")` whenever it needs a string for the UI (button text), console logs, or error messages/alerts.
   4.  Chrome automatically selects the appropriate language based on the user's browser settings and the available locale files, falling back to the `default_locale` if no match is found.
 - **Edge Cases:**
-  - **Missing Key:** If `getMessage` is called with a key that doesn't exist in the selected locale file (or the default), it will typically return an empty string. The code should be somewhat resilient to this, although it might result in missing text.
-  - **Missing Locale File:** If the user's language is set to something other than Spanish and no corresponding `_locales/[lang]` folder exists, Chrome correctly falls back to Spanish (`es`).
+  - **Missing Key:** If `chrome.i18n.getMessage` is called with a key that doesn't exist in the current locale file or the default locale (`es`), Chrome returns an empty string. The extension code using the result should be resilient to empty strings where possible (e.g., button text might appear blank, logs might be less descriptive).
+  - **Missing Locale File:** If the user's browser language doesn't match an available locale folder (`_locales/[lang]/`), Chrome automatically falls back to the `default_locale` specified in `manifest.json` (`es`).
+- **Error Handling:** The `chrome.i18n.getMessage` API itself handles missing keys/locales internally by returning empty strings or falling back. The extension code doesn't need explicit try-catch blocks around `getMessage` calls but should handle the possibility of receiving an empty string.
 - **Validation Rules:** All user-facing strings and descriptive error messages within the code must use `chrome.i18n.getMessage()`.
