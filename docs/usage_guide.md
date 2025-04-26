@@ -5,11 +5,11 @@ This guide explains how to use the Film2Trakt Chrome extension to quickly search
 ## 1. Prerequisites
 
 - **Google Chrome:** You must be using the Google Chrome browser.
-- **Film2Trakt Extension Installed:** The Film2Trakt extension must be installed and enabled in your Chrome browser. (See `/docs/04_setup_and_installation.md` for installation instructions).
+- **Film2Trakt Extension Installed:** The Film2Trakt extension must be installed and enabled in your Chrome browser. (See `/docs/setup_and_installation.md` for installation instructions).
 
 ## 2. How It Works
 
-Film2Trakt simplifies the process of finding content you discover on FilmAffinity within the Trakt.tv platform. Once installed, the extension automatically adds a "Search on Trakt" button directly onto FilmAffinity movie and series pages. Clicking this button instantly opens a new tab with the Trakt.tv search results for that specific title.
+Film2Trakt simplifies the process of finding content you discover on FilmAffinity within the Trakt platform. Once installed, the extension automatically adds a "Search on Trakt" button directly onto FilmAffinity movie and series pages. Clicking this button instantly opens a new tab with the Trakt.tv search results for that specific title.
 
 ## 3. Step-by-Step Usage
 
@@ -22,8 +22,8 @@ Film2Trakt simplifies the process of finding content you discover on FilmAffinit
 ## 4. Expected Outcome
 
 - Immediately after clicking the button, a **new tab** will open in your Chrome browser.
-- This new tab will load the **Trakt.tv search results page**, automatically populated with the title of the movie or series you were viewing on FilmAffinity.
-- You can then explore the results on Trakt.tv, add the item to your watchlist, mark it as watched, etc.
+- This new tab will load the **Trakt search results page**, automatically populated with the title of the movie or series you were viewing on FilmAffinity.
+- You can then explore the results on Trakt, add the item to your watchlist, mark it as watched, etc.
 
 ## 5. Basic Troubleshooting
 
@@ -33,6 +33,6 @@ Film2Trakt simplifies the process of finding content you discover on FilmAffinit
   - Try reloading the FilmAffinity page (Ctrl+R or Cmd+R).
   - Try restarting Chrome.
 - **Button Click Does Nothing or Shows Error?**
-  - Check your internet connection, as opening the Trakt.tv tab requires it.
+  - Check your internet connection, as opening the Trakt tab requires it.
   - Rarely, FilmAffinity might change its website structure, which could temporarily break the extension's ability to find the title. If the problem persists, consider reporting an issue (if a reporting mechanism is available).
   - An alert message might pop up indicating an error (e.g., "Could not open Trakt URL"). This usually points to an issue with the browser's ability to open a new tab at that moment.

@@ -24,15 +24,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Manifest V3:** Extension built using the Manifest V3 standard.
 - **Permissions:** Uses the `activeTab` permission for minimal access.
 - **Documentation:** Initial project documentation created in the `/docs` folder, including:
-  - Project Overview (`01_project_overview.md`)
-  - Requirements (`02_requirements.md`)
-  - Project Structure (`03_project_structure.md`)
-  - Setup and Installation Guide (`04_setup_and_installation.md`)
-  - Usage Guide (`05_usage_guide.md`)
-  - Contribution Guidelines (`06_contribution_guidelines.md`)
-  - Development Notes (`07_development_notes.md`)
-  - Development Prompts (`08_development_prompts.md`)
-  - Changelog (`09_changelog.md`)
+  - Project Overview (`project_overview.md`)
+  - Requirements (`requirements.md`)
+  - Tech Stack (`tech_stack.md`)
+  - Setup and Installation Guide (`setup_and_installation.md`)
+  - Usage Guide (`usage_guide.md`)
+  - Contribution Guidelines (`contribution_guidelines.md`)
+  - Code Style Guide (`code_style_guide.md`)
+  - Code of Conduct (`code_of_conduct.md`)
+  - Changelog (`changelog.md`)
 
 ### Changed
 

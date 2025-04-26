@@ -74,7 +74,7 @@ This document provides a detailed description of each core feature of the Film2T
   - The output must be a valid, properly encoded URL string.
 - **Error Handling:** Logs `errorCreatingUrl` and throws `errorTitleRequired` (localized) if the title is missing.
 
-## Feature 5: Open Trakt.tv Search in New Tab
+## Feature 5: Open Trakt Search in New Tab
 
 - **ID:** FEAT-05
 - **Description:** Opens the constructed Trakt.tv search URL in a new browser tab when the user clicks the button.
