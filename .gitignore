@@ -2,9 +2,9 @@
 /.vscode
 /.archive
 /.dev_notes
+/.releases
 /docs/project_structure.md
 /docs/implementation.md
 /docs/to_do_list.md
 /docs/development_notes.md
 /docs/development_prompts.md
-/.releases

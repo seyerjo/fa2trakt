@@ -45,7 +45,7 @@ This document provides a detailed description of each core feature of the Film2T
 - **Functional Requirements:** FR-02
 - **Detailed Operation:**
   1.  The `isFilmaffinitySeries()` function in `content_script.js` is called.
-  2.  It inspects specific elements or text patterns within the FilmAffinity page DOM that typically differentiate series from movies (e.g., presence of "Serie de TV", "Miniserie" in specific `dd` tags within the technical details section, or other structural clues). _Note: The exact implementation details need verification in the current `content_script.js`._
+  2.  It inspects specific elements or text patterns within the FilmAffinity page DOM that typically differentiate series from movies (e.g., presence of "Serie de TV", "Miniserie" in specific `dd` tags within the technical details section, or other structural clues).
   3.  Based on the analysis, it returns a value indicating the type (e.g., `true` for series, `false` for movie).
 - **Edge Cases:**
   - **Ambiguous Pages:** Pages that don't clearly fit the expected structure for either movies or series might lead to incorrect detection.
