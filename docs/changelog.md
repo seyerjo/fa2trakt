@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Permissions:** Uses the `activeTab` permission for minimal access.
 - **Documentation:** Initial project documentation created in the `/docs` folder, including:
   - Project Overview (`project_overview.md`)
+  - Features (`features.md`)
   - Requirements (`requirements.md`)
   - Tech Stack (`tech_stack.md`)
   - Setup and Installation Guide (`setup_and_installation.md`)
@@ -36,8 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Button position adjusted to appear next to the movie/series title for better context.
+- (No specific changes noted for the initial release).
 
 ### Fixed
 
-- (No specific bug fixes noted for the initial release compared to development stages, as features were being added).
+- (No specific bug fixes noted for the initial release).
