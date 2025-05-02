@@ -27,15 +27,19 @@ This document tracks planned tasks, potential improvements, and known issues for
 ## Improvements & Refactoring
 
 - [ ] **Robustness - DOM Selectors:**
+
   - Basic selectors implemented in `content_script.js` (lines 7, 24, 80).
+
 - [ ] **Robustness - DOM Selectors (remaining tasks):**
 
   - Add comments to document the purpose of CSS selectors.
   - Centralize CSS selectors into constants for easier maintenance.
 
+
 - [x] **Error Handling - Basic Implementation:**
   - Basic error handling with try/catch blocks implemented.
   - Error logging to console implemented.
+
 - [ ] **Error Handling - Improvements Needed:**
 
   - Replace `alert()` in `openTraktUrl` with `console.error` (line 68).
@@ -44,7 +48,9 @@ This document tracks planned tasks, potential improvements, and known issues for
   - Add context parameters to error logging functions.
 
 - [x] **Code Structure:**
+
   - Basic function organization implemented.
+
 - [ ] **Code Quality (remaining tasks):**
 
   - Wrap code in IIFE to prevent global scope pollution.
@@ -52,16 +58,24 @@ This document tracks planned tasks, potential improvements, and known issues for
   - Refactor for better separation of concerns.
 
 - [x] **UI/UX - Button Styling:**
+
   - CSS styles for button implemented in `main.css`.
+
 - [ ] **UI/UX - Improvements Needed:**
 
   - Remove redundant JavaScript hover handling (lines 87-93).
   - Move all hover effects to CSS.
 
 - [x] **Performance - Basic Optimizations:**
+
   - Basic performance considerations in place.
+  - Replaced external 'Figtree' font with system fonts.
+
 - [ ] **Performance - Remaining Tasks:**
-  - Evaluate necessity of external 'Figtree' font (lines 73-77).
+
+  - Cache DOM selectors that are reused (titleElement, titleSpan).
+  - Implement memoization for isFilmaffinitySeries().
+  - Consider dynamic CSS injection only when needed.
   - Monitor content script impact on page load.
 
 ## Bugs & Known Issues
@@ -101,3 +115,6 @@ This document tracks planned tasks, potential improvements, and known issues for
   - Implement automated tests.
 - [ ] **Cross-Browser Compatibility:**
   - Investigate porting to Firefox.
+  - Replace window.open() with chrome.tabs.create() for better extension integration.
+  - Use chrome.storage for state persistence if needed.
+  - Implement event delegation for multiple interactive elements.
