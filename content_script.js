@@ -1,10 +1,18 @@
+// DOM Selectors - FilmAffinity page structure
+const SELECTORS = {
+	MAIN_TITLE: "h1#main-title",
+	TITLE_SPAN: "h1#main-title span",
+	MOVIE_TYPE: ".movie-type",
+	TYPE_SPAN: ".movie-type .type",
+};
+
 /**
  * Extracts the title from the FilmAffinity page.
  * @returns {string|null} The title of the movie/series or null if not found.
  */
 function getFilmaffinityTitle() {
 	try {
-		const titleElement = document.querySelector("h1#main-title span");
+		const titleElement = document.querySelector(SELECTORS.TITLE_SPAN);
 		if (titleElement) {
 			return titleElement.textContent.trim();
 		}
@@ -21,9 +29,9 @@ function getFilmaffinityTitle() {
  */
 function isFilmaffinitySeries() {
 	try {
-		const movieTypeSpan = document.querySelector(".movie-type");
+		const movieTypeSpan = document.querySelector(SELECTORS.MOVIE_TYPE);
 		if (movieTypeSpan) {
-			const typeSpan = movieTypeSpan.querySelector(".type");
+			const typeSpan = movieTypeSpan.querySelector(SELECTORS.TYPE_SPAN);
 			return (
 				typeSpan &&
 				(typeSpan.textContent === "Miniserie" ||
@@ -78,7 +86,10 @@ fontStyle.textContent = `
 `;
 document.head.appendChild(fontStyle);
 // Create a button on the FilmAffinity page.
-const titleElement = document.querySelector("h1#main-title");
+const titleElement = document.querySelector(SELECTORS.MAIN_TITLE);
+if (!titleElement) {
+	throw new Error("Could not find main title element");
+}
 const titleSpan = titleElement.querySelector("span");
 const button = document.createElement("button");
 button.textContent = chrome.i18n.getMessage("searchButtonText");

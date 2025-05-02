@@ -26,17 +26,19 @@ This document tracks planned tasks, potential improvements, and known issues for
 
 ## Improvements & Refactoring
 
-- [ ] **Robustness - DOM Selectors:**
+- [x] **Robustness - DOM Selectors:**
 
-  - Basic selectors implemented in `content_script.js` (lines 7, 24, 80).
+  - Centralized selectors in `SELECTORS` constant object
+  - Added error handling for missing elements
+  - Documented expected DOM structure in comments
 
 - [ ] **Robustness - DOM Selectors (remaining tasks):**
 
   - Add comments to document the purpose of CSS selectors.
   - Centralize CSS selectors into constants for easier maintenance.
 
-
 - [x] **Error Handling - Basic Implementation:**
+
   - Basic error handling with try/catch blocks implemented.
   - Error logging to console implemented.
 
