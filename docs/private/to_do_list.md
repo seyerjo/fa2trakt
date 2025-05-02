@@ -68,6 +68,11 @@ This document tracks planned tasks, potential improvements, and known issues for
   - Remove redundant JavaScript hover handling (lines 87-93).
   - Move all hover effects to CSS.
 
+- [ ] **UI/UX - Icon Design:**
+
+  - Create a new icon for the extension to improve visual identity.
+  - Ensure the icon is consistent with Chrome extension icon guidelines.
+
 - [x] **Performance - Basic Optimizations:**
 
   - Basic performance considerations in place.
