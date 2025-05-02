@@ -4,13 +4,19 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
 
 ## 1. Architectural Overview
 
-- **Architectural Style:** The extension follows a simple **Event-Driven Content Script** architecture, typical for Chrome extensions performing actions within specific web pages. It does not employ complex backend patterns like Microservices or layered monoliths.
+- **Architectural Style:** The extension follows a **Resilient Event-Driven Content Script** architecture, with these key characteristics:
+
+  - Centralized DOM selectors for maintainability
+  - Comprehensive error handling with localized messages
+  - Performance-optimized DOM interactions
+  - Prepared for future API integration
+
 - **Key Architectural Patterns:**
-  - **Content Script Injection:** Core logic (`content_script.js`) is injected directly into matching FilmAffinity pages as defined in the `manifest.json`.
-  - **DOM Manipulation:** The content script interacts with the FilmAffinity page's Document Object Model (DOM) to extract information (titles) and inject UI elements (the search button).
-  - **Event Handling:** User interactions (button clicks) are handled via standard browser event listeners.
-  - **Asynchronous Operations:** Interactions with Chrome APIs (like opening tabs) are asynchronous.
-  - **Internationalization (i18n):** User-facing strings are managed using Chrome's `i18n` API and locale files.
+  - **Content Script Injection:** Core logic (`content_script.js`) is injected directly into matching FilmAffinity pages.
+  - **DOM Resilience:** Uses centralized selectors and fallback mechanisms to handle site structure changes.
+  - **Error Containment:** Isolated error handling per feature with console logging and user notifications.
+  - **Internationalization:** Full i18n support with Spanish as default locale.
+  - **Progressive Enhancement:** Core features work without external dependencies.
 
 ## 2. Core Components
 
@@ -22,7 +28,7 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
     - Determining if the content is a movie or a series.
     - Creating and injecting the "Search on Trakt" button into the page DOM.
     - Handling click events on the injected button.
-    - Constructing the appropriate Trakt.tv search URL.
+    - Constructing the appropriate Trakt search URL.
     - Requesting the browser to open the URL in a new tab via Chrome APIs.
     - Handling errors and logging using localized messages.
   - **Notable Implementation Details:**
@@ -57,7 +63,7 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
 2.  **Event Trigger (`content_script.js`):** The `click` event listener attached to the button executes its handler function.
 3.  **Title Extraction (`content_script.js`):** The handler calls `getFilmaffinityTitle()`, which queries the DOM to find and retrieve the movie/series title string.
 4.  **Type Detection (`content_script.js`):** The handler calls `isFilmaffinitySeries()`, which analyzes the DOM structure to determine if the content is a movie or series (returns boolean/string indicator).
-5.  **URL Construction (`content_script.js`):** The handler calls `createTraktUrl()`, passing the title and type. This function constructs the appropriate Trakt.tv search URL string.
+5.  **URL Construction (`content_script.js`):** The handler calls `createTraktUrl()`, passing the title and type. This function constructs the appropriate Trakt search URL string.
 6.  **Open Tab Request (`content_script.js` -> Browser API):** The handler calls `openTraktUrl()`, which in turn calls `chrome.tabs.create({ url: constructedUrl })`.
 7.  **Browser Action:** The Chrome browser receives the API request and opens the provided URL in a new tab.
 8.  **Error Handling:** At each step (extraction, construction, opening), if an error occurs, localized messages are logged to the console, and potentially an alert is shown to the user (specifically for tab opening failure).

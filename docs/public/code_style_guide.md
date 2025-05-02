@@ -1,44 +1,74 @@
 # Code Style Guide: Film2Trakt
 
-## 1. Code Structure
+## 1. General Principles
+
+- Follow Chrome Extension best practices and security guidelines
+- Maintain context-aware development
+- Ensure new code integrates with existing architecture
+- Provide complete file content when making changes
+
+## 2. Code Structure & Style
 
 - Use ES6 modules for import/export
-- Avoid classes, prefer pure functions
-- Group related logic into specific modules
+- Prefer pure functions over classes
+- Group related logic into modules
+- Write concise, technical code
+- Avoid unnecessary comments
+- Use modern JavaScript/TypeScript features
 
-## 2. Naming Conventions
+## 3. Naming Conventions
 
-- `camelCase` for variables and functions
-- `PascalCase` only for constructors (if used)
-- `UPPER_CASE` for constants
+- Files: `lowercase_with_underscores.js`
+- Variables/functions: `camelCase`
+- Constructors/Classes: `PascalCase` (if used)
+- Constants: `UPPER_CASE`
 - Meaningful prefixes: `is`, `has`, `handle`
 
-## 3. Best Practices
+## 4. TypeScript (Recommended)
 
-- Validate types with `typeof` and reality checks
-- Use destructuring and modern operators
-- Handle errors with `try/catch` in async operations
-- Limit the scope of variables
+- Use interfaces for message structures
+- Leverage union types and type guards
+- Add type annotations for API responses
 
-## 4. Specifications for Chrome Extensions
+## 5. Chrome Extension Specifics
 
-- Use `chrome.*` APIs with proper permission handling
-- Implement Content Security Policy in manifest
-- Separate logic of background scripts and UI
+- Use Manifest V3
+- Implement CSP in manifest.json
+- Separate background/content/popup scripts
+- Use message passing for inter-component communication
+- Follow least privilege for permissions
+- Use `chrome.storage` for state management
 
-## 5. Security
+## 6. Security Requirements
 
+- Implement HTTPS for all network requests
 - Sanitize inputs with DOMPurify
-- Validate URLs before fetch
-- Use `chrome.storage` instead of global variables
+- Validate external data
+- Use `chrome.storage` instead of globals
+- Proper error handling and logging
 
-## 6. Performance
+## 7. Documentation Standards
+
+- JSDoc for all functions/classes:
+  - Brief description
+  - `@param` with types
+  - `@returns` with types
+  - `@example` for complex functions
+  - `@throws` for possible errors
+- Consistent comment style:
+  - Start with `/**`
+  - Each tag on new line
+  - End with `*/`
+
+## 8. Performance
 
 - Optimize content scripts with observers
 - Use `requestIdleCallback` for non-critical tasks
 - Limit re-renders in popups
+- Cache DOM selectors
+- Memoize expensive operations
 
-Example of a valid module:
+Example of a well-documented module:
 
 ```javascript
 // background_actions.js

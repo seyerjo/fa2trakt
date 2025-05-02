@@ -1,6 +1,6 @@
 # Features Deep Dive: Film2Trakt
 
-This document provides a detailed description of each core feature of the Film2Trakt extension (v1.0), including specific operational details, edge cases, and validation rules where applicable.
+This document provides a detailed description of each core feature of the Film2Trakt extension, including specific operational details, edge cases, and validation rules where applicable.
 
 ## Feature 1: Button Injection
 

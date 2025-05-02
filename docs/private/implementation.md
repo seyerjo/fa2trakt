@@ -5,15 +5,28 @@ This document outlines the development approach, coding standards, timeline cons
 ## 1. Development Approach
 
 - **Methodology:** Given the focused scope of the initial version (v1.0) and potential future enhancements, an **Iterative Development** approach is suitable.
-  - **v1.0:** Focus on implementing the core functionality as defined in the requirements (`/docs/requirements.md`) and features (`/docs/features.md`). This includes button injection, title extraction, type detection, URL construction, tab opening, and basic i18n (Spanish).
-  - **Future Iterations:** Subsequent features (e.g., broader language support, Trakt API integration, options page) listed in the To-Do list (`/docs/to_do_list.md`) will be tackled in separate iterations based on priority.
+  - **v1.0:** Core functionality implemented as defined in requirements (`/docs/public/requirements.md`) and features (`/docs/public/features.md`), including:
+    - Button injection with optimized styling
+    - Robust title extraction with centralized selectors
+    - Content type detection
+    - URL construction with error handling
+    - Tab opening with localized feedback
+    - Internationalization (Spanish)
+  - **v1.x:** Current focus on:
+    - UI/UX refinements (CSS-only hover effects)
+    - Enhanced error handling
+    - Performance optimizations
+  - **Future Iterations:** Features listed in To-Do list (`/docs/private/to_do_list.md`) will be tackled based on priority, including:
+    - Trakt API integration (v2.0)
+    - Options page
+    - Multi-language support
 - **Branching Strategy:** A simple Git branching model is recommended:
   - `main`: Represents the latest stable, released version.
   - `develop` (Optional for initial phase, but recommended for future): Integration branch for upcoming release features.
   - `feat/feature-name`: Branches for developing new features.
   - `fix/bug-description`: Branches for fixing bugs.
   - Pull Requests (PRs) should be used to merge feature/fix branches into `develop` (or `main` initially), requiring review (see Contribution Guidelines).
-- **Testing:** Manual testing is the primary method for v1.0. Developers should test thoroughly during development using the "Load unpacked" method in Chrome across various FilmAffinity movie and series pages. Automated testing should be considered for future iterations (see To-Do list).
+- **Testing:** Manual testing is the primary method for v1.0. Developers should test thoroughly during development using the "Load unpacked" method in Chrome across various FilmAffinity movie and series pages. Automated testing should be considered for future iterations.
 
 ## 2. Coding Standards
 
@@ -35,27 +48,50 @@ This document outlines the development approach, coding standards, timeline cons
 ## 3. Timeline Estimates
 
 - **v1.0 (Core Functionality):** Considered complete as per the initial documentation phase. The focus was on defining the existing state.
-- **Future Enhancements:** Timelines for features listed in `/docs/to_do_list.md` are **To Be Determined (TBD)**. Estimation will occur when a specific feature is prioritized for development. Factors influencing estimates will include:
+- **Future Enhancements:** Timelines for features listed in `/docs/private/to_do_list.md` are **To Be Determined (TBD)**. Estimation will occur when a specific feature is prioritized for development. Factors influencing estimates will include:
   - Complexity (e.g., Trakt API integration is significantly more complex than adding a new language).
   - Dependency on external factors (e.g., FilmAffinity website structure stability, Trakt API availability/changes).
   - Developer availability.
 
 ## 4. Technical Guidelines & Best Practices
 
-- **Manifest V3 Compliance:** Strictly adhere to Manifest V3 requirements and limitations (e.g., background service workers instead of persistent pages if background tasks become necessary).
-- **DOM Interaction Caution:** Be mindful that the extension's core logic relies heavily on the FilmAffinity page's DOM structure.
-  - Use specific but potentially stable selectors (e.g., IDs like `#main-title` are preferred over complex CSS paths or index-based selectors).
-  - Implement null checks and error handling around all DOM queries and manipulations (`querySelector`, `appendChild`, `textContent`, etc.).
-  - Comment clearly which parts of the DOM are being targeted.
-- **Asynchronous Operations:** Properly handle promises returned by Chrome APIs (like `chrome.tabs.create`) using `.then()/.catch()` or `async/await` syntax. Check `chrome.runtime.lastError` where applicable, especially within callbacks.
+- **Manifest V3 Compliance:**
+
+  - Currently fully compliant with Manifest V3 requirements
+  - Uses service workers as required
+  - Maintains appropriate CSP in manifest.json
+
+- **DOM Interaction Caution:**
+
+  - Core logic successfully implemented with centralized selectors (`SELECTORS` constant)
+  - Uses stable selectors (e.g., `#main-title`) with null checks
+  - Basic error handling in place for DOM operations
+  - Additional documentation of selectors planned for v1.x
+
+- **Asynchronous Operations:**
+
+  - Properly handles Chrome API promises (e.g., `chrome.tabs.create`)
+  - Checks `chrome.runtime.lastError` consistently
+  - Enhanced error handling with contextual logging planned
+
 - **Security:**
-  - Maintain the principle of least privilege for permissions. Only request permissions essential for functionality.
-  - Sanitize any data potentially derived from the web page if it were ever used in a sensitive context (not currently applicable, but important for future features).
-  - Keep the Content Security Policy (`content_security_policy` in `manifest.json`) as restrictive as possible while allowing necessary operations.
+
+  - Follows principle of least privilege (only `activeTab` permission)
+  - Maintains strict CSP
+  - Prevention of multiple script injections planned for v1.x
+
 - **Internationalization (i18n):**
-  - Ensure _all_ new user-visible strings or descriptive error/log messages are added to `messages.json` files and accessed via `chrome.i18n.getMessage()`.
-  - Maintain consistency in naming message keys.
+
+  - Fully implemented Spanish localization
+  - All UI strings properly internationalized
+  - Additional language support planned for future versions
+
 - **Performance:**
-  - Content scripts should execute quickly and avoid blocking the main thread of the host page.
-  - Minimize complex computations or heavy DOM manipulation on page load. Defer actions to user interaction (like the button click) whenever possible.
-- **Code Reviews:** All code contributions (via Pull Requests) must be reviewed by at least one other team member (if applicable) or the maintainer, focusing on adherence to standards, functionality, and potential issues.
+
+  - Content scripts optimized with system fonts
+  - Efficient DOM query implementation
+  - Further optimizations (caching, memoization) planned
+
+- **Code Reviews:**
+  - Process established per contribution guidelines
+  - All changes require PR review before merging

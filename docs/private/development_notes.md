@@ -5,8 +5,14 @@ This document serves as a log and reference for the development process of the F
 ## 1. Overview & Current Status
 
 - **Purpose:** Film2Trakt is a Chrome extension designed to connect FilmAffinity with Trakt.tv, allowing users to quickly search for movies and series on Trakt.tv directly from FilmAffinity pages.
-- **Current Version:** v1.0
-- **Summary:** The extension currently injects a "Search on Trakt" button onto Spanish FilmAffinity movie/series pages. It extracts the title, determines the content type, constructs the appropriate Trakt.tv search URL, and opens it in a new tab upon user click. Internationalization (i18n) is implemented for UI text and error messages, defaulting to Spanish.
+- **Current Version:** v1.0.2
+- **Summary:** The extension injects a styled "Search on Trakt" button onto Spanish FilmAffinity pages with these key features:
+  - Robust title extraction using centralized DOM selectors
+  - Content type detection (movie/series)
+  - Trakt search URL construction with error handling
+  - Optimized performance (system fonts, efficient queries)
+  - Complete internationalization (Spanish)
+  - Enhanced error handling with localized messages
 
 ## 2. Key Implementation Details & Decisions
 

@@ -40,13 +40,13 @@ We welcome suggestions for new features or improvements! Please create a new iss
 
 If you'd like to contribute code, please follow these steps:
 
-1.  **Set Up Development Environment:** Follow the instructions in `/docs/setup_and_installation.md` to get the project running locally.
+1.  **Set Up Development Environment:** Follow the instructions in `/docs/public/setup_and_installation.md` to get the project running locally.
 2.  **Fork the Repository:** Create your own fork of the main project repository on GitHub.
 3.  **Create a Feature Branch:** Before starting work, create a new branch from the `main` (or `develop`, if applicable) branch in your fork. Use a descriptive name (e.g., `fix/button-alignment`, `feat/add-language-support`).
     ```bash
     git checkout -b feat/your-feature-name
     ```
-4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines `/docs/code_style_guide.md`. Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
+4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines `/docs/public/code_style_guide.md`. Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
 5.  **Commit Changes:** Make clear, concise commit messages. Consider following conventional commit message formats if adopted by the project (e.g., `Add support for French locale`).
     ```bash
     git add .
@@ -69,7 +69,7 @@ If you'd like to contribute code, please follow these steps:
 
 ## 5. Code of Conduct
 
-All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand it before participating `code_of_conduct.md`.
+All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand it before participating `/docs/public/code_of_conduct.md`.
 
 ---
 

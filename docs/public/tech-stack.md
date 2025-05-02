@@ -10,6 +10,7 @@ This document explains the reasoning behind the technology choices made for the 
     - **Minimal Overhead:** Avoids adding the weight and complexity of a framework for a relatively simple task primarily involving DOM manipulation and API calls. This keeps the extension lightweight and performant.
     - **Direct API Access:** Allows direct interaction with standard Web APIs (DOM) and Chrome Extension APIs without abstraction layers.
     - **Sufficient Capability:** Modern JavaScript (ES6+) provides sufficient features (arrow functions, promises, template literals, etc.) to write clean and maintainable code for the current scope.
+    - **Optimized Implementation:** Uses centralized DOM selectors and try-catch error handling for robustness. Performance optimized through system fonts and efficient DOM queries.
   - **Interaction:** Forms the core logic within `content_script.js`, interacting with the DOM and Chrome APIs.
 
 - **CSS3:**
@@ -50,7 +51,11 @@ This document explains the reasoning behind the technology choices made for the 
 - **Git & GitHub:**
   - **Rationale:** Standard version control system and platform for collaboration, code hosting, issue tracking, and managing contributions. Essential for any software project.
 - **(Optional) Node.js/npm:**
-  - **Rationale:** While not currently used for runtime dependencies, Node.js and npm are the standard ecosystem for JavaScript development tooling. They would be chosen if the project incorporates linters (ESLint), formatters (Prettier), bundlers (Webpack/Parcel), or testing frameworks in the future to improve code quality and maintainability.
+  - **Rationale:** While not currently used for runtime dependencies, Node.js and npm are the standard ecosystem for JavaScript development tooling. They would be chosen if the project incorporates:
+    - **ESLint:** Planned for v2.0 to enforce code quality standards
+    - **Prettier:** Already used for code formatting
+    - **Testing Frameworks:** Potential addition for automated testing
+    - **Build Tools:** If needed for future Trakt API integration
 
 ## 4. Excluded Technologies (and Why)
 
