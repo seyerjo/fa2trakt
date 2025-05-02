@@ -28,8 +28,9 @@ This document provides a detailed description of each core feature of the Film2T
 - **Functional Requirements:** FR-01
 - **Detailed Operation:**
   1.  The `getFilmaffinityTitle()` function in `content_script.js` is called (typically triggered by the button click handler).
-  2.  It targets the `h1` element with the ID `main-title` using `document.querySelector('h1#main-title')`.
+  2.  It targets the title text within `h1#main-title` using `document.querySelector(SELECTORS.TITLE_SPAN)`.
   3.  If the element is found, its `textContent` is retrieved, trimmed of leading/trailing whitespace, and returned.
+  4.  Uses centralized `SELECTORS` constant for robustness against DOM changes.
 - **Edge Cases:**
   - **Title Element Not Found:** If the `h1#main-title` element does not exist on the page, the function should fail gracefully.
   - **Empty Title:** If the element exists but its `textContent` is empty or only whitespace, the function should handle this (currently returns an empty string after trimming, which `createTraktUrl` should handle).

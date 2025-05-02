@@ -25,6 +25,9 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
     - Constructing the appropriate Trakt.tv search URL.
     - Requesting the browser to open the URL in a new tab via Chrome APIs.
     - Handling errors and logging using localized messages.
+  - **Notable Implementation Details:**
+    - Uses centralized DOM selectors defined in `SELECTORS` constant for robustness.
+    - Implements error handling for missing DOM elements.
 - **`styles/main.css` (Presentation Layer):**
   - **Responsibility:** Provides the visual styling for the UI elements injected by `content_script.js` (specifically, the `.trakt-search-button`). Ensures consistent appearance and responsiveness.
 - **`_locales/` (Internationalization Resources):**
