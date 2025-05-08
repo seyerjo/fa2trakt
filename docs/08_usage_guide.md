@@ -5,7 +5,7 @@ This guide explains how to use the Film2Trakt Chrome extension to quickly search
 ## 1. Prerequisites
 
 - **Google Chrome:** You must be using the Google Chrome browser.
-- **Film2Trakt Extension Installed:** The Film2Trakt extension must be installed and enabled in your Chrome browser. (See `setup_and_installation.md` for installation instructions).
+- **Film2Trakt Extension Installed:** The Film2Trakt extension must be installed and enabled in your Chrome browser. (See `07_setup_and_installation.md` for installation instructions).
 
 ## 2. How It Works
 

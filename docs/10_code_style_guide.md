@@ -24,11 +24,11 @@
 - Constants: `UPPER_CASE`
 - Meaningful prefixes: `is`, `has`, `handle`
 
-## 4. TypeScript (Recommended)
+## 4. JavaScript ES6 (Recommended)
 
-- Use interfaces for message structures
-- Leverage union types and type guards
-- Add type annotations for API responses
+- Use `chrome.*` APIs in service workers instead of window context
+- Implement content scripts with isolated worlds using `@world`
+- Validate external messages with `runtime.onMessageExternal` checks
 
 ## 5. Chrome Extension Specifics
 

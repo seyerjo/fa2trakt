@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.0.2] - 2025-05-02
 
@@ -53,7 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Injects a "Search on Trakt" button onto FilmAffinity movie and series pages (`www.filmaffinity.com/es/film*.html`).
   - Extracts the movie/series title from the page.
   - Detects content type (movie vs. series).
-  - Constructs the appropriate Trakt.tv search URL.
+  - Constructs the appropriate Trakt search URL.
   - Opens the Trakt search results in a new tab upon button click.
 - **Internationalization (i18n):**
   - Implemented support for localized UI strings and error messages using `chrome.i18n`.
@@ -62,17 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Error Handling:** Implemented basic error logging to the console and user alerts for critical failures (e.g., failing to open the tab), using localized messages.
 - **Manifest V3:** Extension built using the Manifest V3 standard.
 - **Permissions:** Uses the `activeTab` permission for minimal access.
-- **Documentation:** Initial project documentation created in the `/docs` folder, including:
-  - Project Overview (`project_overview.md`)
-  - Features (`features.md`)
-  - Requirements (`requirements.md`)
-  - Tech Stack (`tech_stack.md`)
-  - Setup and Installation Guide (`setup_and_installation.md`)
-  - Usage Guide (`usage_guide.md`)
-  - Contribution Guidelines (`contribution_guidelines.md`)
-  - Code Style Guide (`code_style_guide.md`)
-  - Code of Conduct (`code_of_conduct.md`)
-  - Changelog (`changelog.md`)
+- **Documentation:** Initial project documentation created in the `/docs` folder.
 
 ### Changed
 

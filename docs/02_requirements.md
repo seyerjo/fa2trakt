@@ -26,7 +26,7 @@ These requirements describe how the extension should operate and its quality att
 - **NFR-05: Security - Manifest V3:** The extension MUST adhere to the requirements and security policies of Chrome Manifest V3.
 - **NFR-06: Security - Permissions:** The extension MUST only request the minimum necessary permissions required for its core functionality (currently `activeTab`).
 - **NFR-07: Security - CSP:** The extension MUST define and adhere to an appropriate Content Security Policy (CSP) within its `manifest.json`.
-- **NFR-08: Maintainability - Code Style:** All source code (JavaScript, CSS) MUST adhere to the coding style and structure guidelines defined in the project's `.roo/rules/`.
+- **NFR-08: Maintainability - Code Style:** All source code (JavaScript, CSS) MUST adhere to the coding style and structure guidelines defined in the project's documentation files in the `/docs` folder.
 - **NFR-09: Compatibility - Browser:** The extension MUST be fully functional on the latest stable release version of the Google Chrome browser.
 - **NFR-10: Internationalization - Default Language:** The extension MUST use Spanish ("es") as the default language for all localized strings if the user's browser language is not explicitly supported by an available locale file.
 - **NFR-11: Robustness - Error Recovery:** The extension MUST handle potential runtime errors (e.g., DOM structure changes on FilmAffinity, network issues preventing tab opening) gracefully without causing the script to crash or negatively impact the user's browsing session on the FilmAffinity tab.

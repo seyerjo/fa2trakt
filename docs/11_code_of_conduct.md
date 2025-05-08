@@ -36,11 +36,11 @@ This Code of Conduct applies within all community spaces, including project spac
 
 ## Issue Reporting Standards
 
-Please follow the guidelines outlined in `contribution_guidelines.md` for reporting bugs and suggesting enhancements. Ensure your reports are clear, detailed, and respectful.
+Please follow the guidelines outlined in `09_contribution_guidelines.md` for reporting bugs and suggesting enhancements. Ensure your reports are clear, detailed, and respectful.
 
 ## Pull Request Standards
 
-Contributors are expected to follow the pull request process described in `contribution_guidelines.md`. PRs should be focused, well-documented, and accompanied by a clear explanation of the changes.
+Contributors are expected to follow the pull request process described in `09_contribution_guidelines.md`. PRs should be focused, well-documented, and accompanied by a clear explanation of the changes.
 
 ## Code Review Etiquette
 

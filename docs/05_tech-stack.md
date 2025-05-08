@@ -64,4 +64,4 @@ This document explains the reasoning behind the technology choices made for the 
 - **External Libraries:** No external JS libraries are used to minimize dependencies and maintain performance. Native Web and Chrome APIs suffice.
 - **Databases / `chrome.storage`:** Not required for the current functionality, which is stateless within the context of a single page load. Would be necessary if implementing features requiring persistent user settings or Trakt API authentication tokens.
 
-In summary, the technology stack for Film2Trakt v1.0 was deliberately kept minimal and focused, leveraging native browser capabilities (JavaScript, CSS, Web APIs, Chrome APIs) to achieve the core functionality efficiently and performantly within the Chrome extension environment.
+In summary, the technology stack for Film2Trakt was deliberately kept minimal and focused, leveraging native browser capabilities (JavaScript, CSS, Web APIs, Chrome APIs) to achieve the core functionality efficiently and performantly within the Chrome extension environment.
