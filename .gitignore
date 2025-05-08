@@ -1,8 +1,4 @@
-/.archive
-/.dev
-/.releases
-/.roo
-/.trae
+/.dev/
+/.releases/
 /.trash
 /.vscode
-/docs/private

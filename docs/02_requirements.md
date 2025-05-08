@@ -4,7 +4,7 @@ This document outlines the functional and non-functional requirements for the Fi
 
 ## 1. Functional Requirements (FR)
 
-These requirements describe what the system should do.
+These requirements describe what the extension should do.
 
 - **FR-01: Title Extraction:** The extension MUST accurately extract the primary movie or series title from the relevant FilmAffinity page (`www.filmaffinity.com/es/film*.html`).
 - **FR-02: Content Type Detection:** The extension MUST correctly identify whether the current FilmAffinity page corresponds to a movie or a TV series.
@@ -17,7 +17,7 @@ These requirements describe what the system should do.
 
 ## 2. Non-Functional Requirements (NFR)
 
-These requirements describe how the system should operate and its quality attributes.
+These requirements describe how the extension should operate and its quality attributes.
 
 - **NFR-01: Usability - Button Placement:** The "Search on Trakt" button MUST be placed intuitively near the FilmAffinity content title for easy discovery and access.
 - **NFR-02: Usability - Button Styling:** The button's visual design MUST be distinct yet unobtrusive, fitting reasonably well within the FilmAffinity page aesthetic. Hover states should provide clear visual feedback.

@@ -1,10 +1,18 @@
+// DOM Selectors - FilmAffinity page structure
+const SELECTORS = {
+	MAIN_TITLE: "h1#main-title",
+	TITLE_SPAN: "h1#main-title span",
+	MOVIE_TYPE: ".movie-type",
+	TYPE_SPAN: ".movie-type .type",
+};
+
 /**
  * Extracts the title from the FilmAffinity page.
  * @returns {string|null} The title of the movie/series or null if not found.
  */
 function getFilmaffinityTitle() {
 	try {
-		const titleElement = document.querySelector("h1#main-title span");
+		const titleElement = document.querySelector(SELECTORS.TITLE_SPAN);
 		if (titleElement) {
 			return titleElement.textContent.trim();
 		}
@@ -21,9 +29,9 @@ function getFilmaffinityTitle() {
  */
 function isFilmaffinitySeries() {
 	try {
-		const movieTypeSpan = document.querySelector(".movie-type");
+		const movieTypeSpan = document.querySelector(SELECTORS.MOVIE_TYPE);
 		if (movieTypeSpan) {
-			const typeSpan = movieTypeSpan.querySelector(".type");
+			const typeSpan = movieTypeSpan.querySelector(SELECTORS.TYPE_SPAN);
 			return (
 				typeSpan &&
 				(typeSpan.textContent === "Miniserie" ||
@@ -69,14 +77,19 @@ function openTraktUrl(url) {
 	}
 }
 
-// Create a style element for the Figtree font and add it to the head.
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href =
-	"https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap";
-document.head.appendChild(link);
+// Use system font stack for better performance and security
+const fontStyle = document.createElement("style");
+fontStyle.textContent = `
+.trakt-search-button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+`;
+document.head.appendChild(fontStyle);
 // Create a button on the FilmAffinity page.
-const titleElement = document.querySelector("h1#main-title");
+const titleElement = document.querySelector(SELECTORS.MAIN_TITLE);
+if (!titleElement) {
+	throw new Error("Could not find main title element");
+}
 const titleSpan = titleElement.querySelector("span");
 const button = document.createElement("button");
 button.textContent = chrome.i18n.getMessage("searchButtonText");
@@ -84,16 +97,24 @@ button.classList.add("trakt-search-button");
 titleElement.insertBefore(button, titleSpan.nextSibling);
 
 // Add event listeners to the button
-button.addEventListener("mouseover", function () {
+function handleMouseOver() {
 	button.classList.add("trakt-search-button-hover");
-});
+}
 
-button.addEventListener("mouseout", function () {
+function handleMouseOut() {
 	button.classList.remove("trakt-search-button-hover");
-});
+}
 
-button.addEventListener("click", function () {
+/**
+ * Handles the click event on the Trakt search button.
+ * Gets the title from FilmAffinity, creates the Trakt URL and opens it.
+ */
+function handleClick() {
 	const title = getFilmaffinityTitle();
 	const traktUrl = createTraktUrl(title);
 	openTraktUrl(traktUrl);
-});
+}
+
+button.addEventListener("mouseover", handleMouseOver);
+button.addEventListener("mouseout", handleMouseOut);
+button.addEventListener("click", handleClick);

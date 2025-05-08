@@ -1,6 +1,6 @@
 # Usage Guide: Film2Trakt
 
-This guide explains how to use the Film2Trakt Chrome extension to quickly search for movies and series from FilmAffinity on Trakt.tv.
+This guide explains how to use the Film2Trakt Chrome extension to quickly search for movies and series from FilmAffinity on Trakt.
 
 ## 1. Prerequisites
 
@@ -9,7 +9,7 @@ This guide explains how to use the Film2Trakt Chrome extension to quickly search
 
 ## 2. How It Works
 
-Film2Trakt simplifies the process of finding content you discover on FilmAffinity within the Trakt platform. Once installed, the extension automatically adds a "Search on Trakt" button directly onto FilmAffinity movie and series pages. Clicking this button instantly opens a new tab with the Trakt.tv search results for that specific title.
+Film2Trakt simplifies the process of finding content you discover on FilmAffinity within the Trakt platform. Once installed, the extension automatically adds a "Search on Trakt" button directly onto FilmAffinity movie and series pages. Clicking this button instantly opens a new tab with the Trakt search results for that specific title.
 
 ## 3. Step-by-Step Usage
 

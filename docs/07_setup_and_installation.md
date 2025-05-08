@@ -18,7 +18,7 @@ Follow these steps if you want to contribute to the development of the extension
     Open your terminal or command prompt and run the following command to clone the project files to your local machine:
 
     ```bash
-    git clone https://github.com/your-username/fa2trakt.git # Replace with the actual repository URL
+    git clone https://github.com/seyerjo/fa2trakt.git
     cd fa2trakt
     ```
 
@@ -50,7 +50,7 @@ _(This section describes the intended installation method for end-users once the
 The easiest way for regular users to install Film2Trakt is through the official Chrome Web Store.
 
 1.  Visit the Film2Trakt extension page on the Chrome Web Store:
-    - **[Link Placeholder - To be added once published]**
+    - **[Coming soon]**
 2.  Click the **"Add to Chrome"** button.
 3.  Review the requested permissions and click **"Add extension"** in the confirmation dialog.
 4.  The extension will be automatically installed and enabled. You should see its icon (if defined) in your browser toolbar, and its functionality will be active on relevant FilmAffinity pages.

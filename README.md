@@ -87,12 +87,35 @@ For detailed guidelines on how to contribute, setting up the development environ
 
 ## Future Enhancements 💡
 
-We have several ideas for the future of Film2Trakt:
+Planned improvements and feature roadmap for Film2Trakt:
 
-- Improve robustness of error handling and edge case management.
-- Integrate directly with the Trakt API for more advanced functionalities (e.g., add to watchlist from FilmAffinity).
-- Add support for other FilmAffinity languages (Catalan, English, etc.) by expanding localization files.
-- Consider integration with the Chrome context menu.
+**Short-term (v1.x):**
+
+- Enhanced error handling:
+  - Add retry logic for failed Trakt searches
+  - Implement fallback title extraction methods
+  - Detailed error reporting in console
+
+**Medium-term (v2.0):**
+
+- Trakt API integration:
+  - Add to watchlist/collection directly from FilmAffinity
+  - Fetch and display Trakt ratings alongside FilmAffinity's
+  - Sync watched status between platforms
+
+**Localization:**
+
+- Support for additional FilmAffinity languages:
+  - Catalan (ca)
+  - English (en)
+  - French (fr)
+- Automatic language detection based on FilmAffinity URL
+
+**UI/UX Improvements:**
+
+- Chrome context menu integration
+- Keyboard shortcut support
+- Customizable button position/style via options page
 
 ## Changelog 📜
 
