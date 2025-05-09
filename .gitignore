@@ -1,4 +1,4 @@
-/.dev/
-/.releases/
-/.trash
-/.vscode
+.dev/
+.releases/
+.trash/
+.vscode/
