@@ -65,7 +65,7 @@ This document provides a detailed description of each core feature of the Film2T
   2.  It checks if the `title` is provided (not null or empty).
   3.  It determines the base URL: `https://trakt.tv/search/shows` if `isSeries` is true, or `https://trakt.tv/search/movies` otherwise.
   4.  It URL-encodes the `title` string using `encodeURIComponent()` to handle spaces and special characters safely.
-  5.  It constructs the final URL string by appending `?query=` and the encoded title to the base URL.
+  5.  It constructs the final URL string by appending `?q=` and the encoded title to the base URL.
   6.  The complete URL string is returned.
 - **Edge Cases:**
   - **Empty Title:** If the title string is empty, the function should handle this gracefully (currently throws `errorTitleRequired`). A search URL with an empty query might be valid but yield no results on Trakt.
@@ -83,16 +83,16 @@ This document provides a detailed description of each core feature of the Film2T
 - **Detailed Operation:**
   1.  The `openTraktUrl(url)` function is called with the constructed URL.
   2.  It checks if the `url` is provided.
-  3.  It calls the Chrome Extension API `chrome.tabs.create({ url: url })`.
+  3.  It calls `window.open(url, "_blank")`.
   4.  The browser handles opening the URL in a new tab.
 - **Edge Cases:**
   - **Browser Blocking Popups:** Although unlikely for extension-initiated actions from user clicks, overly aggressive browser settings _could_ interfere, but standard behavior allows this.
-  - **Invalid URL:** If the constructed URL is somehow invalid, `chrome.tabs.create` might fail.
+  - **Invalid URL:** If the constructed URL is somehow invalid, `window.open` might fail silently or open an error page.
 - **Validation Rules:**
   - Input `url` must be a non-empty, valid URL string.
 - **Error Handling:**
   - If the `url` parameter is missing or empty, logs `errorOpeningUrl` (localized) using `console.error` and throws a new `Error` with the localized message `errorUrlRequired`.
-  - After calling `chrome.tabs.create`, it checks `chrome.runtime.lastError`. If an error exists, it logs the error object and the localized message `errorOpeningUrl` using `console.error`, and displays a browser alert to the user with the localized message `alertCouldNotOpenUrl`.
+  - Displays a browser alert to the user with the localized message `alertCouldNotOpenUrl` if the URL parameter is missing or empty. Note: `window.open` does not provide a direct success/failure callback, so errors during the browser's attempt to open the tab cannot be reliably caught by the extension code.
 
 ## Feature 6: Internationalization (i18n)
 

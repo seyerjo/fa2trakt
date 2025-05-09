@@ -29,10 +29,11 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
     - Creating and injecting the "Search on Trakt" button into the page DOM.
     - Handling click events on the injected button.
     - Constructing the appropriate Trakt search URL.
-    - Requesting the browser to open the URL in a new tab via Chrome APIs.
+    - Requesting the browser to open the URL in a new tab using `window.open`.
     - Handling errors and logging using localized messages.
   - **Notable Implementation Details:**
-    - Uses centralized DOM selectors defined in `SELECTORS` constant for robustness.
+    - Uses `window.open` to open the Trakt URL in a new tab.
+    - Uses centralized DOM selectors defined in the `SELECTORS` constant for robustness.
     - Implements error handling for missing DOM elements.
 - **`styles/main.css` (Presentation Layer):**
   - **Responsibility:** Provides the visual styling for the UI elements injected by `content_script.js` (specifically, the `.trakt-search-button`). Ensures consistent appearance and responsiveness.
@@ -42,7 +43,6 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
   - **Responsibility:** These are the browser-provided APIs used by `content_script.js` to interact with the browser environment beyond the page's DOM.
   - **Key APIs Used:**
     - `chrome.i18n.getMessage()`: Retrieves localized strings.
-    - `chrome.tabs.create()`: Opens a new browser tab.
     - (Implicitly) `chrome.runtime`: Provides context about the extension environment.
 
 ## 3. Communication and Interconnection
@@ -64,11 +64,11 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
 3.  **Title Extraction (`content_script.js`):** The handler calls `getFilmaffinityTitle()`, which queries the DOM to find and retrieve the movie/series title string.
 4.  **Type Detection (`content_script.js`):** The handler calls `isFilmaffinitySeries()`, which analyzes the DOM structure to determine if the content is a movie or series (returns boolean/string indicator).
 5.  **URL Construction (`content_script.js`):** The handler calls `createTraktUrl()`, passing the title and type. This function constructs the appropriate Trakt search URL string.
-6.  **Open Tab Request (`content_script.js` -> Browser API):** The handler calls `openTraktUrl()`, which in turn calls `chrome.tabs.create({ url: constructedUrl })`.
-7.  **Browser Action:** The Chrome browser receives the API request and opens the provided URL in a new tab.
-8.  **Error Handling:** At each step (extraction, construction, opening), if an error occurs, localized messages are logged to the console, and potentially an alert is shown to the user (specifically for tab opening failure).
+6.  **Open Tab Request (`content_script.js` -> Browser):** The handler calls `openTraktUrl()`, which in turn calls `window.open(constructedUrl, "_blank")`.
+7.  **Browser Action:** The browser opens the provided URL in a new tab.
+8.  **Error Handling:** At each step (extraction, construction, opening), if an error occurs, localized messages are logged to the console, and potentially an alert is shown to the user (specifically if tab opening fails).
 
-_Diagram Recommendation: A simple sequence diagram could visually represent this flow._
+_Data Flow Diagram (Typical Use Case: User Clicks "Search on Trakt")_
 
 ```mermaid
 sequenceDiagram
@@ -76,7 +76,6 @@ sequenceDiagram
     participant Button as "Search Button (UI)"
     participant ContentScript as "content_script.js"
     participant DOM as "FilmAffinity DOM"
-    participant ChromeAPI as "Chrome Tabs API"
     participant Browser
 
     User->>Button: Clicks
@@ -86,8 +85,7 @@ sequenceDiagram
     ContentScript->>DOM: isFilmaffinitySeries()
     DOM-->>ContentScript: Returns content type
     ContentScript->>ContentScript: createTraktUrl(title, type)
-    ContentScript->>ChromeAPI: chrome.tabs.create({url})
-    ChromeAPI->>Browser: Request to open new tab
+    ContentScript->>Browser: window.open(url, "_blank")
     Browser->>User: Opens Trakt.tv in new tab
 ```
 

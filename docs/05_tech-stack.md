@@ -36,9 +36,8 @@ This document explains the reasoning behind the technology choices made for the 
 
   - **Rationale:** Essential for interacting with browser features beyond the scope of a single web page.
     - `chrome.i18n`: Chosen for native, efficient internationalization support provided by the browser itself, avoiding external libraries. Handles loading appropriate language strings based on browser settings.
-    - `chrome.tabs`: Specifically `chrome.tabs.create`, selected as the simplest, most direct way to fulfill the core requirement of opening the Trakt search results in a new tab.
     - `chrome.runtime`: Used implicitly for the extension context and potentially for error information (`chrome.runtime.lastError`).
-  - **Interaction:** Called from `content_script.js` to perform actions like retrieving localized text and opening new tabs.
+  - **Interaction:** Called from `content_script.js` to perform actions like retrieving localized text. Opening a new tab is handled by `window.open`.
 
 - **Web APIs (DOM & Events):**
   - **Rationale:** Standard browser APIs are the necessary tools for interacting with the content of the FilmAffinity web page.

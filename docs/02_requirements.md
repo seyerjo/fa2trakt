@@ -9,8 +9,8 @@ These requirements describe what the extension should do.
 - **FR-01: Title Extraction:** The extension MUST accurately extract the primary movie or series title from the relevant FilmAffinity page (`www.filmaffinity.com/xx/film*.html`) where `xx` in URL refers to page language (e.g., `es` for Spanish, `en` for English, etc.).
 - **FR-02: Content Type Detection:** The extension MUST correctly identify whether the current FilmAffinity page corresponds to a movie or a TV series.
 - **FR-03: Button Injection:** The extension MUST inject a clearly visible "Search on Trakt" button onto the FilmAffinity page, positioned near the main title of the movie or series.
-- **FR-04: Trakt URL Construction:** Based on the extracted title and content type, the extension MUST construct the correct search URL for Trakt (e.g., `https://trakt.tv/search/movies?query=[title]` or `https://trakt.tv/search/shows?query=[title]`).
-- **FR-05: Trakt URL Opening:** Upon clicking the "Search on Trakt" button, the extension MUST open the constructed Trakt search URL in a new browser tab.
+- **FR-04: Trakt URL Construction:** Based on the extracted title and content type, the extension MUST construct the correct search URL for Trakt (e.g., `https://trakt.tv/search/movies?q=[title]` or `https://trakt.tv/search/shows?q=[title]`).
+- **FR-05: Trakt URL Opening:** Upon clicking the "Search on Trakt" button, the extension MUST open the constructed Trakt search URL in a new browser tab using `window.open`.
 - **FR-06: Internationalization - UI:** The text content of the injected button MUST be displayed using the appropriate localized string obtained via `chrome.i18n.getMessage("searchButtonText")`.
 - **FR-07: Error Handling - Logging:** The extension MUST log descriptive, localized error messages to the browser console if it fails to extract the title, determine content type, construct the URL, or open the new tab.
 - **FR-08: Error Handling - User Feedback:** In case of failure to open the Trakt URL, the extension MUST display a localized alert message to the user (e.g., `alert(chrome.i18n.getMessage("alertCouldNotOpenUrl"))`).

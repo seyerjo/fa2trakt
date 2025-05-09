@@ -64,9 +64,8 @@ This document outlines the development approach, coding standards, timeline cons
 
 - **Asynchronous Operations:**
 
-  - Properly handles Chrome API promises (e.g., `chrome.tabs.create`)
-  - Checks `chrome.runtime.lastError` consistently
-  - Enhanced error handling with contextual logging planned
+  - The current implementation uses `window.open`, which is synchronous and does not return a Promise or allow checking `chrome.runtime.lastError` for success/failure.
+  - Enhanced error handling with contextual logging planned.
 
 - **Security:**
 
@@ -82,9 +81,9 @@ This document outlines the development approach, coding standards, timeline cons
 
 - **Performance:**
 
-  - Content scripts optimized with system fonts
-  - Efficient DOM query implementation
-  - Further optimizations (caching, memoization) planned
+  - Content scripts optimized with system fonts.
+  - Efficient DOM query implementation.
+  - Further optimizations (caching, memoization) planned.
 
 - **Code Reviews:**
   - Process established per contribution guidelines

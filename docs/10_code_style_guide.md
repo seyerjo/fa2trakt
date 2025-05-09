@@ -50,7 +50,7 @@
     	// DOM observation logic
     })();
     ```
-  - Bidirectional communication:
+  - Bidirectional communication (Note: Not currently used in v1.0.2, but included for future reference):
 
     ```javascript
     // Send ratings
@@ -67,7 +67,7 @@
     });
     ```
 
-- Message Validation:
+- Message Validation (Note: Not currently used in v1.0.2, but included for future reference):
 
   - Base schema for all messages:
     ```javascript
@@ -98,9 +98,9 @@
 - Use Manifest V3
 - Implement CSP in manifest.json
 - Separate background/content/popup scripts
-- Use message passing for inter-component communication
+- Use message passing for inter-component communication (Note: Not currently used in v1.0.2)
 - Follow least privilege for permissions
-- Use `chrome.storage` for state management if needed
+- Use `chrome.storage` for state management if needed (Note: Not currently used in v1.0.2)
 
 ## 6. Security Requirements
 
@@ -125,11 +125,12 @@
 
 ## 8. Performance
 
-- Optimize content scripts with observers
-- Use `requestIdleCallback` for non-critical tasks
-- Limit re-renders in popups
-- Cache DOM selectors
-- Memoize expensive operations
+- The current implementation uses `window.open`, which is synchronous and does not return a Promise or allow checking `chrome.runtime.lastError` for success/failure.
+- Optimize content scripts with observers.
+- Use `requestIdleCallback` for non-critical tasks.
+- Limit re-renders in popups.
+- Cache DOM selectors.
+- Memoize expensive operations.
 
 Example of a well-documented module:
 
