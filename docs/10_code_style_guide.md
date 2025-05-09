@@ -14,7 +14,7 @@
 - Group related logic into modules
 - Write concise, technical code
 - Avoid unnecessary comments
-- Use modern JavaScript/TypeScript features
+- Use modern JavaScript features
 
 ## 3. Naming Conventions
 
@@ -24,11 +24,74 @@
 - Constants: `UPPER_CASE`
 - Meaningful prefixes: `is`, `has`, `handle`
 
-## 4. JavaScript ES6 (Recommended)
+## 4. JavaScript ES6 (Manifest V3 Focus)
 
-- Use `chrome.*` APIs in service workers instead of window context
-- Implement content scripts with isolated worlds using `@world`
-- Validate external messages with `runtime.onMessageExternal` checks
+- Service Worker Implementation:
+
+  - Register listeners in `chrome.runtime.onInstalled`
+  - Inject content scripts using:
+    ```javascript
+    chrome.scripting.registerContentScripts([
+    	{
+    		id: "main-script",
+    		matches: ["*://www.filmaffinity.com/*"],
+    		js: ["content_script.js"],
+    		persistAcrossSessions: true,
+    	},
+    ]);
+    ```
+  - Reload service worker with `chrome.runtime.reload()` after critical changes
+
+- Content Script Patterns:
+
+  - Strict isolation with IIFE:
+    ```javascript
+    (function filmAffinityObserver() {
+    	// DOM observation logic
+    })();
+    ```
+  - Bidirectional communication:
+
+    ```javascript
+    // Send ratings
+    chrome.runtime.sendMessage({
+    	type: "SYNC_RATINGS",
+    	payload: getMovieRatings(),
+    });
+
+    // Receive updates
+    chrome.runtime.onMessage.addListener((msg) => {
+    	if (msg.type === "TRAKT_SYNC_COMPLETE") {
+    		showStatusBadge(msg.count);
+    	}
+    });
+    ```
+
+- Message Validation:
+
+  - Base schema for all messages:
+    ```javascript
+    const isValidSyncMessage = (msg) =>
+    	msg?.type === "SYNC_RATINGS" &&
+    	Array.isArray(msg.payload) &&
+    	msg.payload.every(isValidMovieEntry);
+    ```
+
+- Performance Optimizations:
+  - Use `MutationObserver` for DOM changes:
+    ```javascript
+    const observer = new MutationObserver(handleListUpdates);
+    observer.observe(document.getElementById("user-ratings-list"), {
+    	childList: true,
+    	subtree: true,
+    });
+    ```
+  - Implement scroll handler debouncing:
+    ```javascript
+    const updateScrollPosition = debounce(() => {
+    	// Scroll tracking logic
+    }, 200);
+    ```
 
 ## 5. Chrome Extension Specifics
 
@@ -37,14 +100,14 @@
 - Separate background/content/popup scripts
 - Use message passing for inter-component communication
 - Follow least privilege for permissions
-- Use `chrome.storage` for state management
+- Use `chrome.storage` for state management if needed
 
 ## 6. Security Requirements
 
 - Implement HTTPS for all network requests
 - Sanitize inputs with DOMPurify
 - Validate external data
-- Use `chrome.storage` instead of globals
+- Use `chrome.storage` instead of globals if needed
 - Proper error handling and logging
 
 ## 7. Documentation Standards

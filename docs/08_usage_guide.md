@@ -16,7 +16,7 @@ Film2Trakt simplifies the process of finding content you discover on FilmAffinit
 1.  **Navigate to FilmAffinity:** Open your Chrome browser and go to the FilmAffinity website (`https://www.filmaffinity.com/`).
 2.  **Find a Movie or Series:** Browse or search for a movie or TV series you are interested in. Click on its title to go to its dedicated page (e.g., `https://www.filmaffinity.com/es/film******.html`).
 3.  **Locate the Button:** Look near the main title of the movie or series on the page. You should see a button labeled **"Search on Trakt"** (or the equivalent in your browser's language if other locales are supported).
-    - _Example Placement:_ Typically appears right next to or just below the title.
+    - _Example Placement:_ Typically appears right next to the title.
 4.  **Click the Button:** Simply click the "Search on Trakt" button.
 
 ## 4. Expected Outcome

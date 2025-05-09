@@ -53,12 +53,12 @@ This document provides a detailed description of each core feature of the Film2T
   - **Ambiguous Pages:** Pages that don't clearly fit the expected structure for either movies or series might lead to incorrect detection.
   - **DOM Structure Change:** Changes in how FilmAffinity displays type information will break this detection.
 - **Validation Rules:** The function should return a boolean value indicating the detected type.
-- **Error Handling:** If the crucial DOM elements used for detection are missing, potentially logs `errorDetectingType` (localized) using `console.warn` as it might fallback to a default (e.g., movie), but this specific logging isn't explicitly implemented in v1.0.
+- **Error Handling:** If the crucial DOM elements used for detection are missing, potentially logs `errorDetectingType` (localized) using `console.warn` as it might fallback to a default (e.g., movie), but this specific logging isn't explicitly implemented yet.
 
 ## Feature 4: Trakt URL Construction
 
 - **ID:** FEAT-04
-- **Description:** Creates the correct Trakt.tv search URL based on the extracted title and content type.
+- **Description:** Creates the correct Trakt search URL based on the extracted title and content type.
 - **Functional Requirements:** FR-04
 - **Detailed Operation:**
   1.  The `createTraktUrl(title, isSeries)` function is called with the extracted title and the detected content type.
@@ -78,7 +78,7 @@ This document provides a detailed description of each core feature of the Film2T
 ## Feature 5: Open Trakt Search in New Tab
 
 - **ID:** FEAT-05
-- **Description:** Opens the constructed Trakt.tv search URL in a new browser tab when the user clicks the button.
+- **Description:** Opens the constructed Trakt search URL in a new browser tab when the user clicks the button.
 - **Functional Requirements:** FR-05
 - **Detailed Operation:**
   1.  The `openTraktUrl(url)` function is called with the constructed URL.
@@ -97,7 +97,7 @@ This document provides a detailed description of each core feature of the Film2T
 ## Feature 6: Internationalization (i18n)
 
 - **ID:** FEAT-06
-- **Description:** Displays UI text and internal messages in the user's preferred language (defaulting to Spanish).
+- **Description:** Displays UI text and internal messages in the user's preferred language.
 - **Functional Requirements:** FR-06, FR-07, FR-08
 - **Non-Functional Requirements:** NFR-10
 - **Detailed Operation:**

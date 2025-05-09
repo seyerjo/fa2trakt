@@ -10,7 +10,7 @@ Streamline the user's [FilmAffinity](https://www.filmaffinity.com/) movie and se
 - **Seamless Trakt Integration:** Generate correct Trakt search URLs based on the identified title and content type (movie or series).
 - **Non-Intrusive UI:** Integrate a clearly identifiable "Search on Trakt" button within the FilmAffinity interface without disrupting the user experience.
 - **Effortless Workflow:** Enable users to initiate a Trakt search for the currently viewed content with a single click.
-- **Localized Experience:** Provide user interface elements and messages in the user's preferred language, starting with Spanish as the default.
+- **Localized Experience:** Provide user interface elements and messages in the user's preferred language.
 
 ## 3. Problem/Need Addressed
 

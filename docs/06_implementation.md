@@ -5,7 +5,7 @@ This document outlines the development approach, coding standards, timeline cons
 ## 1. Development Approach
 
 - **Methodology:** Given the focused scope of the initial version (v1.0) and potential future enhancements, an **Iterative Development** approach is suitable.
-  - **v1.0:** Core functionality implemented as defined in requirements (`/docs/02_requirements.md`) and features (`/docs/03_features.md`), including:
+  - **v1.0:** Core functionality implemented as defined in requirements (`02_requirements.md`) and features (`03_features.md`), including:
     - Button injection with optimized styling
     - Robust title extraction with centralized selectors
     - Content type detection
@@ -16,7 +16,7 @@ This document outlines the development approach, coding standards, timeline cons
     - UI/UX refinements (CSS-only hover effects)
     - Enhanced error handling
     - Performance optimizations
-  - **Future Iterations:** Features listed in To-Do list (`/.dev/docs/D06_to_do_list.md`) will be tackled based on priority, including:
+  - **Future Iterations:** Features listed in To-Do list (`13_to_do_list.md`) will be tackled based on priority, including:
     - Trakt API integration (v2.0)
     - Options page
     - Multi-language support
@@ -25,7 +25,7 @@ This document outlines the development approach, coding standards, timeline cons
   - `develop` (Optional for initial phase, but recommended for future): Integration branch for upcoming release features.
   - `feat/feature-name`: Branches for developing new features.
   - `fix/bug-description`: Branches for fixing bugs.
-  - Pull Requests (PRs) should be used to merge feature/fix branches into `develop` (or `main` initially), requiring review (see Contribution Guidelines).
+  - Pull Requests (PRs) should be used to merge feature/fix branches into `develop` (or `main` initially), requiring review (see Contribution Guidelines in `09_contribution_guidelines.md`).
 - **Testing:** Manual testing is the primary method. Developers should test thoroughly during development using the "Load unpacked" method in Chrome across various FilmAffinity movie and series pages. Automated testing should be considered for future iterations.
 
 ## 2. Coding Standards
@@ -41,8 +41,8 @@ This document outlines the development approach, coding standards, timeline cons
 
 ## 3. Timeline Estimates
 
-- **v1.0 (Core Functionality):** Considered complete as per the initial documentation phase. The focus was on defining the existing state.
-- **Future Enhancements:** Timelines for features listed in `/.dev/docs/D06_to_do_list.md` are **To Be Determined (TBD)**. Estimation will occur when a specific feature is prioritized for development. Factors influencing estimates will include:
+- **v1.0 (Core Functionality):** Considered complete.
+- **Future Enhancements:** Timelines for features listed in `13_to_do_list.md` are **To Be Determined (TBD)**. Estimation will occur when a specific feature is prioritized for development. Factors influencing estimates will include:
   - Complexity (e.g., Trakt API integration is significantly more complex than adding a new language).
   - Dependency on external factors (e.g., FilmAffinity website structure stability, Trakt API availability/changes).
   - Developer availability.

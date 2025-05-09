@@ -49,8 +49,7 @@ _(This section describes the intended installation method for end-users once the
 
 The easiest way for regular users to install Film2Trakt is through the official Chrome Web Store.
 
-1.  Visit the Film2Trakt extension page on the Chrome Web Store:
-    - **[Coming soon]**
+1.  Visit the Film2Trakt extension page on the Chrome Web Store **(Coming soon)**.
 2.  Click the **"Add to Chrome"** button.
 3.  Review the requested permissions and click **"Add extension"** in the confirmation dialog.
 4.  The extension will be automatically installed and enabled. You should see its icon (if defined) in your browser toolbar, and its functionality will be active on relevant FilmAffinity pages.

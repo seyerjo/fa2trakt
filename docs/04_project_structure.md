@@ -1,6 +1,6 @@
 # Project Structure: Film2Trakt
 
-This document details the architecture and structure of the Film2Trakt Chrome extension for the development team.
+This document details the architecture and structure of the Film2Trakt Chrome extension.
 
 ## 1. Architectural Overview
 
