@@ -119,7 +119,7 @@ Planned improvements and feature roadmap for Film2Trakt:
 
 ## Changelog 📜
 
-Please refer to the [changelog.md](./docs/12_changelog.md) file for the complete history of project changes and versions.
+Please refer to the [CHANGELOG.md](./CHANGELOG.md) file for the complete history of project changes and versions.
 
 ## License 📄
 

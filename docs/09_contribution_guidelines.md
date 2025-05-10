@@ -69,7 +69,7 @@ If you'd like to contribute code, please follow these steps:
 
 ## 5. Code of Conduct
 
-All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand it before participating `11_code_of_conduct.md`.
+All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) before participating.
 
 ---
 
