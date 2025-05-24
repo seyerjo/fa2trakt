@@ -4,6 +4,7 @@
 [![Dev Branch](https://img.shields.io/badge/Dev%20Branch-v1.0.3-blue.svg)]()
 [![GitHub license](https://img.shields.io/github/license/seyerjo/fa2trakt?label=License)](LICENSE)
 [![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/seyerjo/fa2trakt)
 
 ## Overview
 
