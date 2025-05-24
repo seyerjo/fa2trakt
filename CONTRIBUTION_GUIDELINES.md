@@ -46,7 +46,7 @@ If you'd like to contribute code, please follow these steps:
     ```bash
     git checkout -b feat/your-feature-name
     ```
-4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines `10_code_style_guide.md`. Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
+4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines `09_code_style_guide.md`. Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
 5.  **Commit Changes:** Make clear, concise commit messages. Consider following conventional commit message formats if adopted by the project (e.g., `Add support for French locale`).
     ```bash
     git add .
@@ -69,7 +69,7 @@ If you'd like to contribute code, please follow these steps:
 
 ## 5. Code of Conduct
 
-All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) before participating.
+All contributors are expected to adhere to the project's Code of Conduct. Please ensure you read and understand [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) before participating.
 
 ---
 
