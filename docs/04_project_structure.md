@@ -20,25 +20,16 @@ This document details the architecture and structure of the Film2Trakt Chrome ex
 
 ## 2. Core Components
 
-- **`manifest.json` (Configuration & Definition):**
-  - **Responsibility:** Defines the extension's metadata (name, version, description), permissions (`activeTab`), icons, content scripts to be injected, target pages (`matches`), CSS files, and internationalization settings (default locale). Acts as the entry point and configuration hub for the browser.
-- **`content_script.js` (Core Logic & UI Interaction):**
-  - **Responsibility:** This is the main script executed within the context of FilmAffinity pages. It handles:
-    - Extracting the movie/series title from the DOM.
-    - Determining if the content is a movie or a series.
-    - Creating and injecting the "Search on Trakt" button into the page DOM.
-    - Handling click events on the injected button.
-    - Constructing the appropriate Trakt search URL.
-    - Requesting the browser to open the URL in a new tab using `window.open`.
-    - Handling errors and logging using localized messages.
-  - **Notable Implementation Details:**
-    - Uses `window.open` to open the Trakt URL in a new tab.
-    - Uses centralized DOM selectors defined in the `SELECTORS` constant for robustness.
-    - Implements error handling for missing DOM elements.
-- **`styles/main.css` (Presentation Layer):**
-  - **Responsibility:** Provides the visual styling for the UI elements injected by `content_script.js` (specifically, the `.trakt-search-button`). Ensures consistent appearance and responsiveness.
-- **`_locales/` (Internationalization Resources):**
-  - **Responsibility:** Contains subdirectories for each supported language (currently `es` for Spanish). Each subdirectory holds a `messages.json` file defining key-value pairs for localized strings used in the UI and error messages.
+- **`src/manifest.json` (Configuration & Definition):**
+
+  - **Responsibility:** Now located in src directory. Defines extension metadata and configuration.
+
+- **`src/styles/main.css` (Presentation Layer):**
+
+  - **Responsibility:** Moved to src/styles. Styles UI elements.
+
+- **`src/_locales/` (Internationalization Resources):**
+  - **Responsibility:** Located in src/\_locales. Contains Spanish translations.
 - **Chrome Extension APIs (Browser Interaction Layer):**
   - **Responsibility:** These are the browser-provided APIs used by `content_script.js` to interact with the browser environment beyond the page's DOM.
   - **Key APIs Used:**

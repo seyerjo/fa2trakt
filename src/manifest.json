@@ -14,7 +14,7 @@
 		{
 			"matches": ["*://www.filmaffinity.com/es/film*.html"],
 			"js": ["content_script.js"],
-			"css": ["./styles/main.css"]
+			"css": ["styles/main.css"]
 		}
 	],
 	"content_security_policy": {

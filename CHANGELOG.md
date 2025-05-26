@@ -4,21 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.2] - 2025-09-05
+## [Unreleased]
 
 ### Added
 
-- No new features added in this release
+- New src directory structure for source code organization
 
 ### Changed
 
-- Existing code optimizations only
+- Updated paths in manifest.json to reflect new structure
+- Modified project structure documentation
 
-### Fixed
-
-- No specific bug fixes noted for this release
-
-## [1.0.1] - 2025-05-02
+## [1.0.2] - 2025-05-09
 
 ### Added
 
