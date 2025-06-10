@@ -1,5 +1,7 @@
 # Project Overview: Film2Trakt
 
+- **Current Version:** 1.0.2
+
 ## 1. Central Vision Statement
 
 Streamline the user's [FilmAffinity](https://www.filmaffinity.com/) movie and series tracking by integrating it with [Trakt](https://trakt.tv/) using an intuitive browser extension. This extension will enable users to search for movies and series on Trakt directly from FilmAffinity, enhancing their tracking and discovery experience.

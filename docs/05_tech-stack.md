@@ -52,7 +52,7 @@ This document explains the reasoning behind the technology choices made for the 
 - **(Optional) Node.js/npm:**
   - **Rationale:** While not currently used for runtime dependencies, Node.js and npm are the standard ecosystem for JavaScript development tooling. They would be chosen if the project incorporates:
     - **ESLint:** Planned for v2.0 to enforce code quality standards
-    - **Prettier:** Already used for code formatting
+    - **Prettier:** Used for code formatting
     - **Testing Frameworks:** Potential addition for automated testing
     - **Build Tools:** If needed for future Trakt API integration
 

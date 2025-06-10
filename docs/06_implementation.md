@@ -15,7 +15,7 @@ This document outlines the development approach, coding standards, timeline cons
   - **v1.x:** Current focus on:
     - UI/UX refinements (CSS-only hover effects)
     - Enhanced error handling
-    - Performance optimizations
+    - Performance optimizations (implemented with system fonts)
   - **Future Iterations:** Features listed in To-Do list will be tackled based on priority, including:
     - Trakt API integration (v2.0)
     - Options page
@@ -33,7 +33,7 @@ This document outlines the development approach, coding standards, timeline cons
 - **Core Principle:** All code MUST adhere strictly to the rules and conventions defined in the project's documents folder `/docs`.
 - **Key Highlights:**
   - Use Manifest V3.
-  - Prioritize minimal permissions (`activeTab` for now).
+  - Prioritize minimal permissions (`activeTab`).
   - Employ `chrome.i18n` for all user-facing strings and descriptive error messages.
   - Write clear, concise, and appropriately commented vanilla JavaScript (ES6+).
   - Ensure CSS is clean and follows conventions outlined.

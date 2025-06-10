@@ -12,7 +12,7 @@ These requirements describe what the extension should do.
 - **FR-04: Trakt URL Construction:** Based on the extracted title and content type, the extension MUST construct the correct search URL for Trakt (e.g., `https://trakt.tv/search/movies?q=[title]` or `https://trakt.tv/search/shows?q=[title]`).
 - **FR-05: Trakt URL Opening:** Upon clicking the "Search on Trakt" button, the extension MUST open the constructed Trakt search URL in a new browser tab using `window.open`.
 - **FR-06: Internationalization - UI:** The text content of the injected button MUST be displayed using the appropriate localized string obtained via `chrome.i18n.getMessage("searchButtonText")`.
-- **FR-07: Error Handling - Logging:** The extension MUST log descriptive, localized error messages to the browser console if it fails to extract the title, determine content type, construct the URL, or open the new tab.
+- **FR-07: Error Handling - Logging:** The extension MUST log descriptive, localized error messages to the browser console if it fails to extract the title, determine content type, construct the URL, or open the new tab, utilizing i18n for localized messages.
 - **FR-08: Error Handling - User Feedback:** In case of failure to open the Trakt URL, the extension MUST display a localized alert message to the user (e.g., `alert(chrome.i18n.getMessage("alertCouldNotOpenUrl"))`).
 
 ## 2. Non-Functional Requirements (NFR)
@@ -20,7 +20,7 @@ These requirements describe what the extension should do.
 These requirements describe how the extension should operate and its quality attributes.
 
 - **NFR-01: Usability - Button Placement:** The "Search on Trakt" button MUST be placed intuitively near the FilmAffinity content title for easy discovery and access.
-- **NFR-02: Usability - Button Styling:** The button's visual design MUST be distinct yet unobtrusive, fitting reasonably well within the FilmAffinity page aesthetic. Hover states should provide clear visual feedback.
+- **NFR-02: Usability - Button Styling:** The button's visual design MUST be distinct yet unobtrusive, fitting reasonably well within the FilmAffinity page aesthetic. Hover states should provide clear visual feedback, and use a system font stack for better performance and security.
 - **NFR-03: Performance - Page Load:** The execution of the content script MUST NOT introduce any noticeable delay to the loading and rendering time of the FilmAffinity page.
 - **NFR-04: Performance - Responsiveness:** The time elapsed between the user clicking the "Search on Trakt" button and the new Trakt tab beginning to load SHOULD be less than 1 second under normal system conditions (excluding network latency related to loading Trakt itself).
 - **NFR-05: Security - Manifest V3:** The extension MUST adhere to the requirements and security policies of Chrome Manifest V3.

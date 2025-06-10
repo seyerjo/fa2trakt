@@ -15,7 +15,7 @@ Film2Trakt simplifies the process of finding content you discover on FilmAffinit
 
 1.  **Navigate to FilmAffinity:** Open your Chrome browser and go to the FilmAffinity website (`https://www.filmaffinity.com/`).
 2.  **Find a Movie or Series:** Browse or search for a movie or TV series you are interested in. Click on its title to go to its dedicated page (e.g., `https://www.filmaffinity.com/es/film******.html`).
-3.  **Locate the Button:** Look near the main title of the movie or series on the page. You should see a button labeled **"Search on Trakt"** (or the equivalent in your browser's language if other locales are supported).
+- Locate the Button: Look near the main title of the movie or series on the page. You should see a button labeled **"Search on Trakt"** (the text is localized based on your browser's language settings).
     - _Example Placement:_ Typically appears right next to the title.
 4.  **Click the Button:** Simply click the "Search on Trakt" button.
 
@@ -35,4 +35,4 @@ Film2Trakt simplifies the process of finding content you discover on FilmAffinit
 - **Button Click Does Nothing or Shows Error?**
   - Check your internet connection, as opening the Trakt tab requires it.
   - Rarely, FilmAffinity might change its website structure, which could temporarily break the extension's ability to find the title. If the problem persists, consider reporting an issue (if a reporting mechanism is available).
-  - An alert message might pop up indicating an error (e.g., "Could not open Trakt URL"). This usually points to an issue with the browser's ability to open a new tab at that moment.
+  - An alert message might pop up indicating an error (e.g., "Could not open Trakt URL"). This message is localized. This usually points to an issue with the browser's ability to open a new tab at that moment.
