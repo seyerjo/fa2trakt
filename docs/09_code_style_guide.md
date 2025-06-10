@@ -102,28 +102,32 @@
 - Follow least privilege for permissions
 - Use `chrome.storage` for state management if needed (Note: Not currently used in v1.0.2)
 
-## 6. Security Requirements
+## 7. Security Requirements
 
 - Implement HTTPS for all network requests
 - Sanitize inputs with DOMPurify
 - Validate external data
-- Use `chrome.storage` instead of globals if needed
+- Use `chrome.storage` for sensitive data and warn against storing critical information in insecure locations like the page's `localStorage`.
 - Proper error handling and logging
+- Sender Verification: When communicating between extension components, the sender's identity must be verified for increased security.
 
-## 7. Documentation Standards
+## 8. Documentation Standards
 
 - JSDoc for all functions/classes:
   - Brief description
-  - `@param` with types
-  - `@returns` with types
-  - `@example` for complex functions
-  - `@throws` for possible errors
+  - `@param` for all parameters, specifying their types.
+  - `@returns` for return values, specifying their types.
+  - `@example` for complex functions, showing their usage.
+  - `@throws` for possible errors that the function may throw.
 - Consistent comment style:
-  - Start with `/**`
-  - Each tag on new line
-  - End with `*/`
+  - Start with `/**` on a separate line.
+  - Each tag (`@param`, `@returns`, etc.) on its own line.
+  - End with `*/` on a separate line.
+- Document all exported symbols.
+- Update documentation whenever functionality changes.
+- Use descriptive but concise language in the documentation.
 
-## 8. Performance
+## 9. Performance
 
 - The current implementation uses `window.open`, which is synchronous and does not return a Promise or allow checking `chrome.runtime.lastError` for success/failure.
 - Optimize content scripts with observers.
@@ -131,6 +135,10 @@
 - Limit re-renders in popups.
 - Cache DOM selectors.
 - Memoize expensive operations.
+- Use `chrome.alarms` for scheduled tasks instead of `setInterval`.
+- Explain the efficient use of `chrome.storage`, warning against excessive reads/writes or very large data.
+- Suggest the optimization of resources included in the extension (images, etc.).
+- Implement or suggest lazy loading for non-critical extension features.
 
 Example of a well-documented module:
 
