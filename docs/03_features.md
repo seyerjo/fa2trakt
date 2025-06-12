@@ -13,7 +13,7 @@ This document provides a detailed description of each core feature of the Film2T
   2.  The script creates a `<button>` HTML element.
   3.  The button's text content is set using `chrome.i18n.getMessage("searchButtonText")`.
   4.  The CSS class `trakt-search-button` is added to the button for styling.
-  5.  The script identifies the target insertion point in the DOM, typically the container element holding the main title (`h1#main-title`).
+  5.  The script identifies the target insertion point in the DOM, typically the container element holding the main title (`h1#main-title`) and its inner `<span>`.
   6.  The created button is appended or inserted adjacent to this target element.
 - **Edge Cases:**
   - **DOM Structure Change:** If FilmAffinity significantly changes the structure around the `h1#main-title`, the button might be injected in the wrong place or fail to inject.

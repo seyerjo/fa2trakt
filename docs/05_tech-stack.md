@@ -10,14 +10,14 @@ This document explains the reasoning behind the technology choices made for the 
     - **Minimal Overhead:** Avoids adding the weight and complexity of a framework for a relatively simple task primarily involving DOM manipulation and API calls. This keeps the extension lightweight and performant.
     - **Direct API Access:** Allows direct interaction with standard Web APIs (DOM) and Chrome Extension APIs without abstraction layers.
     - **Sufficient Capability:** Modern JavaScript (ES6+) provides sufficient features (arrow functions, promises, template literals, etc.) to write clean and maintainable code for the current scope.
-    - **Optimized Implementation:** Uses centralized DOM selectors and try-catch error handling for robustness. Performance optimized through system fonts and efficient DOM queries.
+    - **Optimized Implementation:** Uses centralized DOM selectors and try-catch error handling for robustness. Performance optimized through efficient DOM queries. Font styling and hover effects are managed via CSS.
   - **Interaction:** Forms the core logic within `content_script.js`, interacting with the DOM and Chrome APIs.
 
 - **CSS3:**
 
   - **Rationale:** Standard technology for styling web content. Chosen for its direct applicability to styling the injected UI elements (the button).
     - **Simplicity:** Sufficient for the limited styling needs of the extension.
-    - **Direct Application:** Easily applied to DOM elements via CSS classes defined in `styles/main.css` and linked in `manifest.json`.
+    - **Direct Application:** Easily applied to DOM elements via CSS classes defined in `styles/main.css` and linked in `manifest.json`. Handles all visual aspects including base styles, hover effects, and font definitions.
     - **Performance:** Native browser rendering is highly optimized.
   - **Interaction:** Defines the visual appearance of the `.trakt-search-button` injected by `content_script.js`.
 

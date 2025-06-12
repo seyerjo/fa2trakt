@@ -1,3 +1,9 @@
+/**
+ * Main content script for the fa2trakt Chrome extension.
+ * This IIFE handles the extraction of movie/series titles from FilmAffinity,
+ * constructs the corresponding trakt.tv search URL, and opens it in a new tab.
+ * It also dynamically adds a search button to the FilmAffinity page.
+ */
 (function () {
 	// DOM Selectors - FilmAffinity page structure
 	const SELECTORS = {
@@ -47,9 +53,9 @@
 	}
 
 	/**
-	 * Builds the Trakt.tv search URL.
-	 * @param {string} title - The title of the movie/series.
-	 * @returns {string|null} The Trakt.tv search URL or null if title is not provided.
+	 * Builds the trakt.tv search URL.
+	 * @param {string} title - The title of the movie/series, passed as an argument by the `handleClick()` function.
+	 * @returns {string|null} The trakt.tv search URL or null if title is not provided.
 	 */
 	function createTraktUrl(title) {
 		try {
@@ -65,7 +71,7 @@
 	}
 
 	/**
-	 * Opens the Trakt.tv URL in a new tab.
+	 * Opens the trakt.tv URL in a new tab.
 	 * @param {string} url - The URL to open.
 	 */
 	function openTraktUrl(url) {
@@ -78,14 +84,6 @@
 		}
 	}
 
-	// Use system font stack for better performance and security
-	const fontStyle = document.createElement("style");
-	fontStyle.textContent = `
-.trakt-search-button {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-`;
-	document.head.appendChild(fontStyle);
 	// Create a button on the FilmAffinity page.
 	const titleElement = document.querySelector(SELECTORS.MAIN_TITLE);
 	if (!titleElement) {
@@ -97,18 +95,12 @@
 	button.classList.add("trakt-search-button");
 	titleElement.insertBefore(button, titleSpan.nextSibling);
 
-	// Add event listeners to the button
-	function handleMouseOver() {
-		button.classList.add("trakt-search-button-hover");
-	}
-
-	function handleMouseOut() {
-		button.classList.remove("trakt-search-button-hover");
-	}
-
 	/**
 	 * Handles the click event on the Trakt search button.
-	 * Gets the title from FilmAffinity, creates the Trakt URL and opens it.
+	 * This function orchestrates the search process:
+	 * 1. It calls `getFilmaffinityTitle()` to retrieve the title from the page.
+	 * 2. It then passes this title to `createTraktUrl()` to build the search URL.
+	 * 3. Finally, it calls `openTraktUrl()` to open the constructed URL in a new tab.
 	 */
 	function handleClick() {
 		const title = getFilmaffinityTitle();
@@ -116,7 +108,6 @@
 		openTraktUrl(traktUrl);
 	}
 
-	button.addEventListener("mouseover", handleMouseOver);
-	button.addEventListener("mouseout", handleMouseOut);
+	// Add event listeners to the button
 	button.addEventListener("click", handleClick);
 })();

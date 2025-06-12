@@ -13,8 +13,8 @@ This document outlines the development approach, coding standards, timeline cons
     - Tab opening with localized feedback
     - Internationalization (Spanish)
   - **v1.x:** Current focus on:
-    - UI/UX refinements (CSS-only hover effects)
-    - Enhanced error handling
+    - UI/UX refinements (CSS-only hover effects, font styling managed via CSS).
+    - Enhanced error handling (ongoing).
     - Performance optimizations (implemented with system fonts)
   - **Future Iterations:** Features listed in To-Do list will be tackled based on priority, including:
     - Trakt API integration (v2.0)

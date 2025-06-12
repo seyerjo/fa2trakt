@@ -12,6 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Refactored UI interaction in `content_script.js`:
+  - Removed JavaScript-based hover effects; now fully handled by CSS in `styles/main.css`.
+  - Removed JavaScript-based dynamic font style injection; font styles are now solely managed by `styles/main.css`.
 - Updated paths in manifest.json to reflect new structure
 - Modified project structure documentation
 
