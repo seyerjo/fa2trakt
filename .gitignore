@@ -1,1 +1,4 @@
+.archive/
+.dev/
 .releases/
+.vscode/
