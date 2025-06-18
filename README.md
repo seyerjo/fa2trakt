@@ -81,14 +81,11 @@ For detailed guidelines on how to contribute, setting up the development environ
 
 ## Known Issues 🐛
 
-### v1.0.2
-
-- The extension relies on the current HTML structure of FilmAffinity. Significant changes to the FilmAffinity website could affect the extension's functionality.
-- Title extraction might fail on pages with non-standard structures or unusual titles.
+- The extension's functionality is critically dependent on the HTML structure of FilmAffinity. Significant changes to the FilmAffinity website could impact title extraction, button placement, and overall extension operation.
 
 ## Future Enhancements 💡
 
-Planned improvements and feature roadmap for Film2Trakt:
+Planned improvements and feature roadmap:
 
 **Short-term (v1.x):**
 
@@ -97,7 +94,7 @@ Planned improvements and feature roadmap for Film2Trakt:
   - Implement fallback title extraction methods
   - Detailed error reporting in console
 
-**Medium-term (v2.0):**
+**Long-term:**
 
 - Trakt API integration:
   - Add to watchlist/collection directly from FilmAffinity
