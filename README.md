@@ -80,7 +80,7 @@ For detailed guidelines on how to contribute, setting up the development environ
 
 ## Known Issues 🐛
 
-- The extension's functionality is critically dependent on the HTML structure of FilmAffinity. Significant changes to the FilmAffinity website could impact title extraction, button placement, and overall extension operation.
+- The extension's functionality is dependent on the HTML structure of FilmAffinity. Significant changes to the FilmAffinity website could impact title extraction and button placement.
 
 ## Future Enhancements 💡
 
@@ -98,7 +98,7 @@ Planned improvements and feature roadmap:
 - Trakt API integration:
   - Add to watchlist/collection directly from FilmAffinity
   - Fetch and display Trakt ratings alongside FilmAffinity's
-  - Sync watched status between platforms
+  - Synchronize watched status between platforms
 
 **Localization:**
 

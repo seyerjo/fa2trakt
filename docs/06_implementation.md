@@ -20,12 +20,12 @@ This document outlines the development approach, coding standards, timeline cons
     - Trakt API integration (v2.0)
     - Options page
     - Multi-language support
-- **Branching Strategy:** A simple Git branching model is recommended:
+- **Branching Strategy:** The project now uses the following Git branching model:
   - `main`: Represents the latest stable, released version.
-  - `develop` (Optional for initial phase, but recommended for future): Integration branch for upcoming release features.
+  - `develop`: The primary integration branch for ongoing development of upcoming features.
   - `feat/feature-name`: Branches for developing new features.
   - `fix/bug-description`: Branches for fixing bugs.
-  - Pull Requests (PRs) should be used to merge feature/fix branches into `develop` (or `main` initially), requiring review (see Contribution Guidelines in `CONTRIBUTION_GUIDELINES.md`).
+  - Pull Requests (PRs) MUST be used to merge feature/fix branches into `develop` (and `develop` into `main` for releases), requiring review as per `CONTRIBUTION_GUIDELINES.md`.
 - **Testing:** Manual testing is the primary method. Developers should test thoroughly during development using the "Load unpacked" method in Chrome across various FilmAffinity movie and series pages. Automated testing should be considered for future iterations.
 
 ## 2. Coding Standards
