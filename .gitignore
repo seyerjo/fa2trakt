@@ -1,5 +1,3 @@
-.archive/
-.dev/
-.kilocode/
-.releases/
-.aiexclude
+archive/
+dev/
+releases/
