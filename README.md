@@ -1,15 +1,33 @@
 # Film2Trakt
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/seyerjo/fa2trakt?label=Release)](https://github.com/seyerjo/fa2trakt/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/seyerjo/fa2trakt?label=License)](LICENSE)
-[![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/seyerjo/fa2trakt)
+<p align="center">
+  <a href="https://github.com/seyerjo/fa2trakt/releases/latest">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/seyerjo/fa2trakt?label=Release">
+  </a>
+  <a href="LICENSE">
+    <img alt="GitHub license" src="https://img.shields.io/github/license/seyerjo/fa2trakt?label=License">
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg">
+  </a>
+  <a href="https://deepwiki.com/seyerjo/fa2trakt">
+    <img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg">
+  </a>
+</p>
+
+## Welcome to Film2Trakt! 👋
+
+Welcome to the official repository for **Film2Trakt**, an open-source browser extension designed to bridge the gap between FilmAffinity and Trakt websites. We're excited to have you here! Whether you're a user, a developer, or just curious, we appreciate your interest in this project.
+
+As an open-source initiative, we believe in collaboration and community. Your feedback, bug reports, and contributions are highly valued and essential for making Film2Trakt better for everyone. Please feel free to explore the project, check out the code, read the documentation, and join us in improving the user experience for film and series enthusiasts.
+
+Thank you for being part of our community!
 
 ## Overview
 
 Film2Trakt is a Chrome extension designed to **streamline your movie and series tracking workflow** by intelligently connecting [FilmAffinity](https://www.filmaffinity.com/) with [Trakt](https://trakt.tv/). Tired of copying and pasting titles? With Film2Trakt, you can instantly search for any title from FilmAffinity on Trakt with a single click, saving you time and effort. It's the perfect tool for film and series enthusiasts who use both platforms.
 
-For a more detailed description of the project's vision and objectives, please refer to [project_overview.md](./docs/01_project_overview.md).
+For a more detailed description of the project's vision and objectives, please refer to [Project Overview](./docs/01_project_overview.md).
 
 ## Features ✨
 
@@ -20,7 +38,7 @@ For a more detailed description of the project's vision and objectives, please r
 - ⚠️ **Basic Error Handling:** Alerts the user if there are issues extracting the title.
 - 🌍 **Internationalization (i18n) Ready:** Prepared for multiple languages. Currently supports **Spanish (`es`)** for all UI elements and messages.
 
-For a complete and detailed list of features, including edge cases and error handling, please refer to [features.md](./docs/03_features.md). For functional and non-functional requirements, check [requirements.md](./docs/02_requirements.md).
+For a complete and detailed list of features, including edge cases and error handling, please refer to [Features](./docs/03_features.md). For functional and non-functional requirements, check [Requirements](./docs/02_requirements.md).
 
 ## Installation 🚀
 
@@ -42,7 +60,7 @@ You can install Film2Trakt in several ways:
     - Enable "Developer mode".
     - Click "Load unpacked" and select the root folder of the repository (where `manifest.json` is located).
 
-For more detailed development environment setup instructions and prerequisites, please refer to [setup_and_installation.md](./docs/07_setup_and_installation.md).
+For more detailed development environment setup instructions and prerequisites, please refer to [Setup and Installation.md](./docs/07_setup_and_installation.md).
 
 ## Usage 🎬
 
@@ -56,7 +74,7 @@ Using Film2Trakt is very simple:
 
 3.  Click the button. A new tab will open, displaying the search results for that title on Trakt.tv.
 
-For a more complete step-by-step usage guide and basic troubleshooting, please refer to [usage_guide.md](docs/08_usage_guide.md).
+For a more complete step-by-step usage guide and basic troubleshooting, please refer to [Usage Guide](docs/08_usage_guide.md).
 
 ## Technologies Used 💻
 
@@ -67,7 +85,7 @@ Film2Trakt is built using the following technologies:
 - **Chrome Extension API:** For extension functionality, permissions, and tab handling.
 - **Chrome Extension i18n API:** For managing internationalization of texts.
 
-For a more detailed justification of the choice of these technologies, you can consult [tech-stack.md](docs/05_tech-stack.md).
+For a more detailed justification of the choice of these technologies, you can consult [Tech Stack](docs/05_tech-stack.md).
 
 ## Contributing 👋
 
@@ -76,7 +94,7 @@ Contributions are welcome! If you find a bug, have a suggestion for improvement,
 - **Report Bugs or Suggest Enhancements:** Open an [Issue on GitHub](https://github.com/seyerjo/fa2trakt/issues). Please describe the problem or suggestion with as much detail as possible.
 - **Contribute Code:** If you want to submit code, please follow our contribution process. This generally involves forking the repository, creating a branch, implementing your changes, and submitting a Pull Request.
 
-For detailed guidelines on how to contribute, setting up the development environment for collaboration, and the Pull Request process, please refer to [CONTRIBUTION_GUIDELINES.md](./CONTRIBUTION_GUIDELINES.md).
+For detailed guidelines on how to contribute, setting up the development environment for collaboration, and the Pull Request process, please refer to [Contribution Guidelines](./CONTRIBUTION_GUIDELINES.md).
 
 ## Known Issues 🐛
 
@@ -116,7 +134,7 @@ Planned improvements and feature roadmap:
 
 ## Changelog 📜
 
-Please refer to the [CHANGELOG.md](./CHANGELOG.md) file for the complete history of project changes and versions.
+Please refer to the [CHANGELOG](./CHANGELOG.md) file for the complete history of project changes and versions.
 
 ## License 📄
 

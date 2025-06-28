@@ -1,6 +1,6 @@
 # Project Overview: Film2Trakt
 
-- **Current Version:** 1.0.2
+> **Current Version:** 1.0.3
 
 ## 1. Central Vision Statement
 
