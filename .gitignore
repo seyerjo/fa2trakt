@@ -1,5 +1,9 @@
 # Git will ignore these files and folders.
 
 .archive/
-.dev/
+.dev/*
 .releases/
+
+# Before run Gemini CLI, these lines must be uncommented.
+# !.dev/rules/
+# !.dev/rules/gca_user_rules.json
