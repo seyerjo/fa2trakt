@@ -102,35 +102,29 @@ For detailed guidelines on how to contribute, setting up the development environ
 
 ## Future Enhancements 💡
 
-Planned improvements and feature roadmap:
+Here are some of the key improvements we're planning:
 
 **Short-term (v1.x):**
 
-- Enhanced error handling:
-  - Add retry logic for failed Trakt searches
-  - Implement fallback title extraction methods
-  - Detailed error reporting in console
+- **Improved Error Handling:** Replace intrusive alerts with subtle UI notifications and make title extraction more robust.
+- **Broader FilmAffinity Support:** Add support for other languages on FilmAffinity, like English (`/en/`).
+- **Code Quality:** Integrate tools like ESLint to ensure code consistency and quality.
 
-**Long-term:**
+**Medium & Long-term (v2.0 and beyond):**
 
-- Trakt API integration:
-  - Add to watchlist/collection directly from FilmAffinity
-  - Fetch and display Trakt ratings alongside FilmAffinity's
-  - Synchronize watched status between platforms
+- **Direct Trakt API Integration:**
 
-**Localization:**
+  - Authenticate with your Trakt account.
+  - Add movies/shows to your watchlist or collection directly from FilmAffinity.
+  - See the watched status of an item without leaving the page.
 
-- Support for additional FilmAffinity languages:
-  - Catalan (ca)
-  - English (en)
-  - French (fr)
-- Automatic language detection based on FilmAffinity URL
+- **UI/UX Improvements:**
 
-**UI/UX Improvements:**
+  - A dedicated options page to configure the extension.
+  - Keyboard shortcuts for quick searching.
+  - Integration with Chrome's right-click context menu.
 
-- Chrome context menu integration
-- Keyboard shortcut support
-- Customizable button position/style via options page
+- **Performance & Security:** Continuously optimize performance and strengthen the extension's security policies.
 
 ## Changelog 📜
 
