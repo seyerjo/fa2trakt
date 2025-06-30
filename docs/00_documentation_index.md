@@ -12,7 +12,7 @@ Please use the index below to navigate through the different sections. We believ
 
 This project documentation is designed to provide a comprehensive understanding of the project, from its vision, its implementation details to its usage.
 
-- **[Project Overview](./01_project_overview.md):** (You are here) The "North Star" of the project, outlining its central vision, core objectives, and the problem it solves.
+- **[Project Overview](./01_project_overview.md):** The "North Star" of the project, outlining its central vision, core objectives, and the problem it solves.
 - **[Requirements](./02_requirements.md):** A detailed list of functional and non-functional requirements that define the extension's capabilities and constraints.
 - **[Features](./03_features.md):** A breakdown of each key feature, including its description, operation, and associated requirements.
 - **[Project Structure](./04_project_structure.md):** An overview of the proposed architecture, main components, data flow, and technology stack.
