@@ -87,6 +87,12 @@ Film2Trakt is built using the following technologies:
 
 For a more detailed justification of the choice of these technologies, you can consult [Tech Stack](docs/05_tech-stack.md).
 
+## Project Documentation 📚
+
+This project is thoroughly documented to provide a complete understanding of its architecture, features, and implementation. Whether you are a user, developer, or just curious, we invite you to explore our knowledge hub.
+
+For a complete index of all documentation, please refer to the [Documentation Index](./docs/00_documentation_index.md).
+
 ## Contributing 👋
 
 Contributions are welcome! If you find a bug, have a suggestion for improvement, or want to add a new feature, please don't hesitate to participate.
