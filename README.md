@@ -1,19 +1,10 @@
 # Film2Trakt
 
-<p align="center">
-  <a href="https://github.com/seyerjo/fa2trakt/releases/latest">
-    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/seyerjo/fa2trakt?label=Release">
-  </a>
-  <a href="LICENSE">
-    <img alt="GitHub license" src="https://img.shields.io/github/license/seyerjo/fa2trakt?label=License">
-  </a>
-  <a href="https://github.com/prettier/prettier">
-    <img alt="code style: prettier" src="https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg">
-  </a>
-  <a href="https://deepwiki.com/seyerjo/fa2trakt">
-    <img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg">
-  </a>
-</p>
+<a href="https://deepwiki.com/seyerjo/fa2trakt"><img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg"></a>
+![Project Status](https://img.shields.io/badge/Status-Developing-yellow.svg)
+![Technology](https://img.shields.io/badge/Tech-CSS/JS-blue.svg)
+![Code Style](https://img.shields.io/badge/Code%20Style-Prettier-ff69b4.svg)
+![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)
 
 ## Welcome to Film2Trakt! 👋
 
