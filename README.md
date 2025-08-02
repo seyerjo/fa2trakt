@@ -62,6 +62,7 @@ Using Film2Trakt is very simple:
 2.  You will see a button with the text "Buscar en Trakt" (or similar, depending on the language) next to the main title of the movie or series on the page.
 
     ![Film2Trakt button on FilmAffinity page](./src/assets/images/image_fa2trakt_button.png)
+    <span style="font-size: 11px;">\* Image of the button for the Spanish version</span>
 
 3.  Click the button. A new tab will open, displaying the search results for that title on Trakt.tv.
 
