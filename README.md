@@ -59,10 +59,9 @@ Using Film2Trakt is very simple:
 
 1.  Navigate to a movie or series page on the **Spanish version** of FilmAffinity (for example, `https://www.filmaffinity.com/es/filmXXXXXX.html`).
     - **Note:** Currently, the extension only activates on the Spanish site (`/es/`).
-2.  You will see a button with the text "Buscar en Trakt" (or similar, depending on the language) next to the main title of the movie or series on the page.
+2.  You will see a button with the text "Search on Trakt" (or similar, depending on the language) next to the main title of the movie or series on the page, as you can see in the following image for the spanish version.
 
     ![Film2Trakt button on FilmAffinity page](./src/assets/images/image_fa2trakt_button.png)
-    <span style="font-size: 11px;">Image of the button for the Spanish version</span>
 
 3.  Click the button. A new tab will open, displaying the search results for that title on Trakt.tv.
 
