@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Local panoramic repository banner and circular author avatar under `.github/assets/`.
+- Standard OS, dependency, and build exclusion patterns in `.gitignore`.
+
+### Changed
+
+- Consolidated legacy 12-file `/docs` documentation into `01_project_blueprint.md` and `02_engineering_guidelines.md`.
+- Regenerated `README.md` in Showcase / Authority format aligned with the `v1.0.4` codebase.
+
+### Removed
+
+- Deprecated legacy documentation files (`docs/00_documentation_index.md` through `docs/09_code_style_guide.md`).
+- Unused community templates (`CONTRIBUTION_GUIDELINES.md` and `CODE_OF_CONDUCT.md`).
+
 ## [1.0.4] - 2026-03-24
 
 ### Changed
