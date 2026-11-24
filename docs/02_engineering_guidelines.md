@@ -110,8 +110,8 @@ This section explains the reasoning behind the technology choices made for the F
 ### 3. Development & Tooling
 
 - **Git & GitHub:** Version control and release distribution.
-- **Local Tooling Configs (Excluded from Git via `.git/info/exclude`):** `.eslintrc.json`, `.prettierrc.json`, and `jsconfig.json` provide local linting, formatting (4 spaces, single quotes, LF), and JSDoc type checking without adding runtime dependencies.
-- **Python Release Script (`.agents/skills/local-release/scripts/build_release.py`):** Validates `manifest.json`, `_locales/*/messages.json`, and `CHANGELOG.md` and builds reproducible `.zip` packages under `.releases/`.
+- **Zero Runtime Dependencies:** Extension runtime ships purely vanilla JS, CSS, and Chrome `i18n` bundles without `node_modules` or build artifacts.
+- **Formatting & Release Packaging:** Source files follow standard ESLint/Prettier conventions (4 spaces, single quotes, LF) and are packaged into clean, manifest-validated ZIP archives containing only `src/` runtime assets and `LICENSE`.
 
 ### 4. Excluded Technologies (and Why)
 
@@ -170,7 +170,7 @@ _(Intended installation method once published to the Chrome Web Store.)_
 #### 2. Code Structure & Style
 
 - Prefer pure helper functions and early returns; avoid unnecessary comments (document the *why* when non-obvious, e.g., `window.open` returning `null` under `noopener`).
-- Match `.prettierrc.json` formatting: 4 spaces, single quotes, semicolons, no trailing commas, LF line endings.
+- Formatting standard: 4 spaces, single quotes, semicolons, no trailing commas, LF line endings.
 - Content scripts use a strict IIFE (`'use strict'`) so helper functions remain private without exposing JS modules via `web_accessible_resources`.
 
 #### 3. Naming Conventions
@@ -205,7 +205,7 @@ _(Intended installation method once published to the Chrome Web Store.)_
 - **v1.1 (Current):** Chrome Extensions v4.0 alignment, Shadow DOM UI (button + toast), zero install-time permissions, security hardening, idempotency, and English (`/en/`) support.
 - **v2.0 (Planned):** Background Service Worker (`type: "module"`), `chrome.tabs.create`, Trakt API OAuth 2.0, `chrome.storage`, and `options.html`.
 
-#### 2. Branching Strategy (Aligned with `global_git_rules.md`)
+#### 2. Branching Strategy
 
 - `main`: Stable branch; never merge feature/topic branches without explicit user approval.
 - Dedicated task branches created from `main` for every change: `feature/<name>`, `refactor/<name>`, `fix/<name>`, or `chore/<name>`.
@@ -213,5 +213,5 @@ _(Intended installation method once published to the Chrome Web Store.)_
 
 #### 3. Testing & Code Review
 
-- Run syntax checks (`node --check src/assets/js/content.js`), JSON/i18n parity checks, behavioral DOM/VM checks, and `build_release.py --dry-run` before proposing a merge.
+- Run syntax checks (`node --check src/assets/js/content.js`), JSON/i18n parity checks, behavioral DOM/VM checks, and manifest/asset validation before proposing a merge.
 - Perform live Chrome smoke tests via **Load unpacked** on both `/es/film*.html` and `/en/film*.html` movie and series pages before cutting a release.
