@@ -19,7 +19,7 @@ A lightweight, zero-dependency Chrome Manifest V3 extension built with vanilla E
 </p>
 
 [![Stack](https://img.shields.io/badge/Stack-Chrome%20MV3%20%7C%20Vanilla%20JS%20%7C%20Shadow%20DOM-8131a4.svg)](#architecture)
-[![Version](https://img.shields.io/badge/Version-1.0.4-blue.svg)](#documentation)
+[![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](#documentation)
 [![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen.svg)](#license)
 [![Last Commit](https://img.shields.io/github/last-commit/seyerjo/fa2trakt)](https://github.com/seyerjo/fa2trakt/commits/main)
 
