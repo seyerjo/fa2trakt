@@ -38,7 +38,7 @@ Users who discover or rate films and TV shows on [FilmAffinity](https://www.film
 1. Open Google Chrome and navigate to `chrome://extensions`.
 2. Enable **Developer mode** and click **Load unpacked**, then select the `src` folder inside this repository (`fa2trakt/src`).
 3. Visit any Spanish or English FilmAffinity title page matching `https://www.filmaffinity.com/es/film*.html` or `https://www.filmaffinity.com/en/film*.html`.
-4. Click the injected **Buscar en Trakt** / **Search on Trakt** button next to the main title to open `https://trakt.tv/search/movies?q=...` or `https://trakt.tv/search/shows?q=...` in a new tab.
+4. Click the injected **Buscar en Trakt** / **Search on Trakt** button next to the main title to open `https://app.trakt.tv/search?m=movie&q=...` or `https://app.trakt.tv/search?m=show&q=...` in a new tab.
 
 ![Film2Trakt button injected on a Spanish FilmAffinity page](./.github/assets/image_fa2trakt_button.png)
 
@@ -46,10 +46,10 @@ Users who discover or rate films and TV shows on [FilmAffinity](https://www.film
 
 - **One-Click Idempotent Trakt Lookup:** Guards against duplicate injections (`[data-fa2trakt-root="button"]`), inserts a Shadow DOM search button after the title `<span>` inside `h1#main-title` (with direct-append fallback), and opens validated URLs via `window.open(url, "_blank", "noopener,noreferrer")`.
 - **Resilient Title Extraction:** Uses immutable frozen DOM selectors (`Object.freeze(SELECTORS)`) to extract and trim the primary title from `h1#main-title span`, falling back to direct text nodes inside `h1#main-title` if the inner `<span>` is absent.
-- **Bilingual Movie vs. Series Detection:** Inspects `.movie-type .type` for Spanish and English series labels (`Serie`, `Miniserie`, `Serie de TV`, `Miniserie de TV`, `Series`, `Miniseries`, `TV Series`, `TV Miniseries`) with `meta[property="og:type"]` (`video.tv_show`) and `document.title` fallbacks to route queries to `/search/shows` or `/search/movies`.
+- **Bilingual Movie vs. Series Detection:** Inspects `.movie-type .type` for Spanish and English series labels (`Serie`, `Miniserie`, `Serie de TV`, `Miniserie de TV`, `Series`, `Miniseries`, `TV Series`, `TV Miniseries`) with `meta[property="og:type"]` (`video.tv_show`) and `document.title` fallbacks to route queries to `m=show` or `m=movie` on `app.trakt.tv/search`.
 - **Shadow DOM Style Isolation & Accessibility:** Encapsulates both the search button and non-intrusive error toast notifications in open Shadow Roots styled via `src/assets/css/content.css` (`:host` custom properties, `:focus-visible`, `@media (max-width: 768px)`, and `prefers-reduced-motion`).
 - **Native Chrome Localization (`i18n`):** Supports Spanish (`src/_locales/es/messages.json`, `default_locale: "es"`) and English (`src/_locales/en/messages.json`) with cached fallback strings for extension context invalidation.
-- **Zero-Trust Manifest V3 Security:** Requires zero install-time API permissions, restricts `content_scripts` to HTTPS FilmAffinity title URLs (`run_at: "document_idle"`), scopes `web_accessible_resources` to `https://www.filmaffinity.com/*` with `"use_dynamic_url": true`, validates outbound `https://trakt.tv` URLs, and enforces `script-src 'self'; object-src 'self'` via CSP.
+- **Zero-Trust Manifest V3 Security:** Requires zero install-time API permissions, restricts `content_scripts` to HTTPS FilmAffinity title URLs (`run_at: "document_idle"`), scopes `web_accessible_resources` to `https://www.filmaffinity.com/*` with `"use_dynamic_url": true`, validates outbound `https://app.trakt.tv/search` URLs, and enforces `script-src 'self'; object-src 'self'` via CSP.
 
 ## Architecture
 
@@ -67,7 +67,7 @@ sequenceDiagram
     DOM-->>ContentScript: Trimmed title string (or null)
     ContentScript->>DOM: createTraktUrl(title) -> isFilmaffinitySeries()
     DOM-->>ContentScript: Type / og:type / title check
-    ContentScript->>ContentScript: Validate https://trakt.tv/search/{shows|movies}?q=...
+    ContentScript->>ContentScript: Validate https://app.trakt.tv/search?m={show|movie}&q=...
     ContentScript->>Browser: openTraktUrl(url) -> window.open(url, "_blank", "noopener,noreferrer")
     Browser->>User: Opens Trakt.tv search results in new tab (or Shadow DOM toast on error)
 ```

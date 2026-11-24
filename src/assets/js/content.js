@@ -24,7 +24,7 @@
      * Frozen runtime configuration and series-detection constants.
      */
     const CONFIG = Object.freeze({
-        TRAKT_ORIGIN: 'https://trakt.tv',
+        TRAKT_ORIGIN: 'https://app.trakt.tv',
         STYLESHEET_PATH: 'assets/css/content.css',
         TOAST_DURATION_MS: 5000,
         SERIES_TYPE_LABELS: Object.freeze([
@@ -217,9 +217,9 @@
     }
 
     /**
-     * Validates that a URL string uses HTTPS and targets the expected Trakt.tv origin.
+     * Validates that a URL string uses HTTPS and targets the expected Trakt search endpoint.
      * @param {string} url - The URL string to validate.
-     * @returns {boolean} True if the URL is a valid HTTPS Trakt.tv URL.
+     * @returns {boolean} True if the URL is a valid HTTPS app.trakt.tv/search URL.
      */
     function isValidTraktUrl(url) {
         if (typeof url !== 'string' || url.trim().length === 0) {
@@ -227,16 +227,20 @@
         }
         try {
             const parsed = new URL(url);
-            return parsed.protocol === 'https:' && parsed.origin === CONFIG.TRAKT_ORIGIN;
+            return (
+                parsed.protocol === 'https:' &&
+                parsed.origin === CONFIG.TRAKT_ORIGIN &&
+                parsed.pathname === '/search'
+            );
         } catch {
             return false;
         }
     }
 
     /**
-     * Builds and validates the Trakt.tv search URL for the given title.
+     * Builds and validates the Trakt Web search URL for the given title.
      * @param {string|null} title - Extracted movie or series title.
-     * @returns {string|null} A validated HTTPS Trakt.tv search URL, or null on invalid input.
+     * @returns {string|null} A validated HTTPS app.trakt.tv search URL, or null on invalid input.
      */
     function createTraktUrl(title) {
         try {
@@ -245,8 +249,8 @@
             }
 
             const encodedTitle = encodeURIComponent(title.trim());
-            const searchType = isFilmaffinitySeries() ? 'shows' : 'movies';
-            const targetUrl = `${CONFIG.TRAKT_ORIGIN}/search/${searchType}?q=${encodedTitle}`;
+            const searchMode = isFilmaffinitySeries() ? 'show' : 'movie';
+            const targetUrl = `${CONFIG.TRAKT_ORIGIN}/search?m=${searchMode}&q=${encodedTitle}`;
 
             if (!isValidTraktUrl(targetUrl)) {
                 throw new Error(getLocalizedMessage('errorInvalidUrl', CACHED_MESSAGES.errorInvalidUrl));

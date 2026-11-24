@@ -44,7 +44,7 @@ These requirements describe what the extension should do.
 - **FR-01: Title Extraction:** The extension MUST accurately extract the primary movie or series title from relevant HTTPS FilmAffinity pages (`https://www.filmaffinity.com/es/film*.html` and `https://www.filmaffinity.com/en/film*.html`), including fallback extraction from direct text nodes inside `h1#main-title` if the inner `<span>` is absent.
 - **FR-02: Content Type Detection:** The extension MUST correctly identify whether the current FilmAffinity page corresponds to a movie or a TV series/miniseries across both Spanish and English pages, with metadata (`og:type`) and `document.title` fallbacks.
 - **FR-03: Button Injection:** The extension MUST idempotently inject a clearly visible, Shadow DOM-encapsulated "Search on Trakt" button onto the FilmAffinity page, positioned near the main title of the movie or series.
-- **FR-04: Trakt URL Construction:** Based on the extracted title and content type, the extension MUST construct and validate an HTTPS search URL for Trakt (`https://trakt.tv/search/movies?q=[title]` or `https://trakt.tv/search/shows?q=[title]`).
+- **FR-04: Trakt URL Construction:** Based on the extracted title and content type, the extension MUST construct and validate an HTTPS search URL for Trakt (`https://app.trakt.tv/search?m=movie&q=[title]` or `https://app.trakt.tv/search?m=show&q=[title]`).
 - **FR-05: Trakt URL Opening:** Upon clicking the button, the extension MUST open the validated Trakt search URL in a new browser tab using `window.open(url, "_blank", "noopener,noreferrer")` (migration to `chrome.tabs.create` is deferred to v2.0 when a background service worker is introduced).
 - **FR-06: Internationalization - UI:** The text and accessible label of the injected button MUST be displayed using localized strings obtained via `chrome.i18n.getMessage()` (with safe fallbacks).
 - **FR-07: Error Handling - Logging:** The extension MUST log descriptive, localized error messages to the browser console if it fails to find the title container, extract the title, determine content type, validate/construct the URL, or open the new tab.
@@ -123,8 +123,8 @@ This section provides a detailed description of each core feature of the Film2Tr
 - **Functional Requirements:** FR-04, FR-07
 - **Detailed Operation:**
   1. `createTraktUrl(title)` verifies `typeof title === 'string' && title.trim().length > 0`.
-  2. Encodes the trimmed title with `encodeURIComponent()`, calls `isFilmaffinitySeries()`, and selects `https://trakt.tv/search/shows` or `https://trakt.tv/search/movies`.
-  3. Validates the constructed URL with `isValidTraktUrl()` (`parsed.protocol === 'https:' && parsed.origin === 'https://trakt.tv'`).
+  2. Encodes the trimmed title with `encodeURIComponent()`, calls `isFilmaffinitySeries()`, and selects `m=show` or `m=movie` on `https://app.trakt.tv/search`.
+  3. Validates the constructed URL with `isValidTraktUrl()` (`parsed.protocol === 'https:' && parsed.origin === 'https://app.trakt.tv' && parsed.pathname === '/search'`).
 - **Edge Cases:**
   - **Null/Empty Title or Invalid URL:** Logs localized `errorCreatingUrl` with cause (`errorTitleRequired` or `errorInvalidUrl`) and returns `null`.
 

@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Standard OS, dependency, and build exclusion patterns in `.gitignore`.
 - English localization bundle (`src/_locales/en/messages.json`) and content script support for `https://www.filmaffinity.com/en/film*.html`.
 - Open Shadow DOM encapsulation for the injected search button and non-intrusive, auto-dismissible error toast notifications (`src/assets/css/content.css`), with `:focus-visible` and `prefers-reduced-motion` accessibility support.
-- Fallback title extraction from direct `h1#main-title` text nodes, `og:type` / `document.title` series-detection fallbacks, `https://trakt.tv` URL validation, and `AbortController` cleanup on `pagehide`.
+- Fallback title extraction from direct `h1#main-title` text nodes, `og:type` / `document.title` series-detection fallbacks, `https://app.trakt.tv/search` URL validation, and `AbortController` cleanup on `pagehide`.
 
 ### Changed
 
@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
+- Updated Trakt web search URLs from legacy `https://trakt.tv/search/{movies|shows}` (now returning HTTP 404 after Trakt's web app migration) to `https://app.trakt.tv/search?m={movie|show}&q=...`.
 - Guarded against duplicate button injections (`[data-fa2trakt-root="button"]`), missing inner `<span>` inside `h1#main-title`, unlocalized missing-title errors, non-boolean returns from `isFilmaffinitySeries()`, click-handler error cascades, and host `:root` CSS variable pollution.
 
 ### Removed

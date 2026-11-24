@@ -17,7 +17,7 @@ This section details the architecture and structure of the Film2Trakt Chrome ext
   - **Content Script Injection:** Core logic (`src/assets/js/content.js`) is injected at `document_idle` into HTTPS Spanish and English FilmAffinity pages.
   - **Shadow DOM Style Isolation:** Extension CSS (`src/assets/css/content.css`) is linked inside each Shadow Root (`:host` variables) rather than injected into the host page document.
   - **DOM Resilience & Idempotency:** Duplicate-injection guards (`[data-fa2trakt-root="button"]`), inner-span fallbacks, and metadata/title fallbacks for content-type detection.
-  - **Zero-Trust Validation:** Strict `https://trakt.tv` URL validation and `window.open(url, '_blank', 'noopener,noreferrer')`.
+  - **Zero-Trust Validation:** Strict `https://app.trakt.tv/search` URL validation and `window.open(url, '_blank', 'noopener,noreferrer')`.
   - **Internationalization:** Full Chrome `i18n` support for Spanish (`es`, default) and English (`en`).
 
 ### 2. Core Components
@@ -58,7 +58,7 @@ This section details the architecture and structure of the Film2Trakt Chrome ext
 1. **Initialization (`initialize()`):** At `document_idle`, verifies no existing button host is mounted, creates an open Shadow Root on `h1#main-title`, links `assets/css/content.css`, and attaches delegated click and `pagehide` listeners using `lifecycleController.signal`.
 2. **User Action:** User clicks the Shadow DOM button (`[data-fa2trakt-action="search"]`).
 3. **Title Extraction:** `handleSearchClick()` calls `getFilmaffinityTitle()`, which queries `h1#main-title span` (with direct text-node fallback). If `null`, displays a localized Shadow DOM toast and aborts cleanly.
-4. **URL Construction & Type Detection:** `createTraktUrl(title)` calls `isFilmaffinitySeries()` (checking `.movie-type .type`, `og:type`, and `document.title`), encodes the title, and validates the `https://trakt.tv/search/{shows|movies}` URL via `isValidTraktUrl()`.
+4. **URL Construction & Type Detection:** `createTraktUrl(title)` calls `isFilmaffinitySeries()` (checking `.movie-type .type`, `og:type`, and `document.title`), encodes the title, and validates the `https://app.trakt.tv/search?m={show|movie}&q=...` URL via `isValidTraktUrl()`.
 5. **Open Tab Request:** `openTraktUrl(traktUrl)` validates the URL again and executes `window.open(url, '_blank', 'noopener,noreferrer')`. Any thrown exception logs a localized error and displays a dismissible Shadow DOM toast.
 
 _Data Flow Diagram (Typical Use Case: User Clicks "Search on Trakt")_
@@ -77,7 +77,7 @@ sequenceDiagram
     DOM-->>ContentScript: Trimmed title string (or null)
     ContentScript->>DOM: createTraktUrl(title) -> isFilmaffinitySeries()
     DOM-->>ContentScript: Series/movie boolean
-    ContentScript->>ContentScript: Validate https://trakt.tv URL
+    ContentScript->>ContentScript: Validate https://app.trakt.tv/search URL
     ContentScript->>Browser: openTraktUrl(url) -> window.open(url, "_blank", "noopener,noreferrer")
     Browser->>User: Opens Trakt.tv in new tab (or Shadow DOM toast on error)
 ```
