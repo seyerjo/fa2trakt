@@ -1,0 +1,66 @@
+{
+    "appName": {
+        "message": "Film2Trakt",
+        "description": "The name of the extension."
+    },
+    "appDesc": {
+        "message": "Search FilmAffinity movies and TV series directly on Trakt.",
+        "description": "The description of the extension."
+    },
+    "searchButtonText": {
+        "message": "Search on Trakt",
+        "description": "Text displayed on the search button."
+    },
+    "searchButtonAriaLabel": {
+        "message": "Search this title on Trakt.tv in a new tab",
+        "description": "Accessible label for the search button."
+    },
+    "errorMainTitleNotFound": {
+        "message": "Could not find the main title element on the page.",
+        "description": "Error logged when the main title container cannot be found."
+    },
+    "errorGettingTitle": {
+        "message": "Error extracting the title from FilmAffinity.",
+        "description": "Error message logged to console when title extraction fails."
+    },
+    "errorTitleNotFound": {
+        "message": "Title element not found on the page.",
+        "description": "Error thrown when the title element cannot be found."
+    },
+    "errorDeterminingType": {
+        "message": "Error determining whether the page is a TV series.",
+        "description": "Error message logged when determining if the page is for a series."
+    },
+    "errorCreatingUrl": {
+        "message": "Error building the Trakt search URL.",
+        "description": "Error message logged when the Trakt URL creation fails."
+    },
+    "errorTitleRequired": {
+        "message": "A non-empty title is required to build the URL.",
+        "description": "Error thrown when trying to create URL without a title."
+    },
+    "errorInvalidUrl": {
+        "message": "Generated URL is not a valid HTTPS Trakt.tv destination.",
+        "description": "Error thrown when the generated URL fails HTTPS or origin validation."
+    },
+    "errorOpeningUrl": {
+        "message": "Error opening the Trakt URL.",
+        "description": "Error message logged when opening the Trakt URL fails."
+    },
+    "errorUrlRequired": {
+        "message": "A valid URL is required to open it.",
+        "description": "Error thrown when trying to open a null/empty URL."
+    },
+    "toastCouldNotGetTitle": {
+        "message": "Could not extract the title from this FilmAffinity page.",
+        "description": "Toast message shown to the user when the title cannot be extracted."
+    },
+    "toastCouldNotOpenUrl": {
+        "message": "Could not open Trakt.tv. Check your connection or try again.",
+        "description": "Toast message shown to the user when the Trakt URL cannot be opened."
+    },
+    "toastCloseLabel": {
+        "message": "Close notification",
+        "description": "Accessible label for the toast dismiss button."
+    }
+}

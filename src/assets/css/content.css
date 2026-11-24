@@ -1,0 +1,141 @@
+:host {
+    --fa2trakt-primary: #8131a4;
+    --fa2trakt-hover: #4a5568;
+    --fa2trakt-focus: #a855f7;
+    --fa2trakt-text: #ffffff;
+    --fa2trakt-toast-bg: #1f2937;
+    --fa2trakt-toast-error-bg: #991b1b;
+    --fa2trakt-toast-border: rgba(255, 255, 255, 0.16);
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+:host([data-fa2trakt-root='button']) {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.fa2trakt-button {
+    background-color: var(--fa2trakt-primary);
+    color: var(--fa2trakt-text);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fa2trakt-button:hover {
+    background-color: var(--fa2trakt-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fa2trakt-button:active {
+    transform: translateY(0);
+}
+
+.fa2trakt-button:focus-visible {
+    outline: 2px solid var(--fa2trakt-focus);
+    outline-offset: 2px;
+}
+
+:host([data-fa2trakt-root='toast']) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2147483647;
+    max-width: 360px;
+}
+
+.fa2trakt-toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--fa2trakt-toast-border);
+    background-color: var(--fa2trakt-toast-bg);
+    color: var(--fa2trakt-text);
+    font-size: 13px;
+    line-height: 1.4;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    animation: fa2trakt-toast-enter 0.2s ease-out;
+}
+
+.fa2trakt-toast--error {
+    background-color: var(--fa2trakt-toast-error-bg);
+}
+
+.fa2trakt-toast__message {
+    flex: 1;
+}
+
+.fa2trakt-toast__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--fa2trakt-text);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 6px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.fa2trakt-toast__close:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.fa2trakt-toast__close:focus-visible {
+    outline: 2px solid var(--fa2trakt-focus);
+    outline-offset: 2px;
+    opacity: 1;
+}
+
+@keyframes fa2trakt-toast-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .fa2trakt-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    :host([data-fa2trakt-root='toast']) {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fa2trakt-button,
+    .fa2trakt-toast,
+    .fa2trakt-toast__close {
+        transition: none;
+        transform: none;
+        animation: none;
+    }
+}
