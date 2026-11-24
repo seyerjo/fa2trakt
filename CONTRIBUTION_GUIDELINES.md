@@ -40,13 +40,13 @@ I welcome suggestions for new features or improvements! Please create a new issu
 
 If you'd like to contribute code, please follow these steps:
 
-1.  **Set Up Development Environment:** Follow the instructions in `07_setup_and_installation.md` to get the project running locally.
+1.  **Set Up Development Environment:** Follow the instructions in [Engineering Guidelines — Setup & Installation](./docs/02_engineering_guidelines.md#setup--installation) to get the project running locally.
 2.  **Fork the Repository:** Create your own fork of the main project repository on GitHub.
 3.  **Create a Feature Branch:** Before starting work, create a new branch from the `main` (or `develop`, if applicable) branch in your fork. Use a descriptive name (e.g., `fix/button-alignment`, `feat/add-language-support`).
     ```bash
     git checkout -b feat/your-feature-name
     ```
-4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines `09_code_style_guide.md`. Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
+4.  **Write Code:** Make your changes, adhering to the project's coding style and guidelines in [Engineering Guidelines — Code Style Guide](./docs/02_engineering_guidelines.md#code-style-guide). Ensure your code is clear, commented where necessary, and follows best practices for Chrome extensions.
 5.  **Commit Changes:** Make clear, concise commit messages. Consider following conventional commit message formats if adopted by the project (e.g., `Add support for French locale`).
     ```bash
     git add .

@@ -18,7 +18,7 @@ Thank you for being part of our community!
 
 Film2Trakt is a Chrome extension designed to **streamline your movie and series tracking workflow** by intelligently connecting [FilmAffinity](https://www.filmaffinity.com/) with [Trakt](https://trakt.tv/). Tired of copying and pasting titles? With Film2Trakt, you can instantly search for any title from FilmAffinity on Trakt with a single click, saving you time and effort. It's the perfect tool for film and series enthusiasts who use both platforms.
 
-For a more detailed description of the project's vision and objectives, please refer to [Project Overview](./docs/01_project_overview.md).
+For a more detailed description of the project's vision and objectives, please refer to [Project Blueprint](./docs/01_project_blueprint.md#vision--objectives).
 
 ## Features ✨
 
@@ -29,7 +29,7 @@ For a more detailed description of the project's vision and objectives, please r
 - ⚠️ **Basic Error Handling:** Alerts the user if there are issues extracting the title.
 - 🌍 **Internationalization (i18n) Ready:** Prepared for multiple languages. Currently supports **Spanish (`es`)** for all UI elements and messages.
 
-For a complete and detailed list of features, including edge cases and error handling, please refer to [Features](./docs/03_features.md). For functional and non-functional requirements, check [Requirements](./docs/02_requirements.md).
+For a complete and detailed list of features, including edge cases and error handling, please refer to [Product Features](./docs/01_project_blueprint.md#product-features). For functional and non-functional requirements, check [Requirements](./docs/01_project_blueprint.md#requirements).
 
 ## Installation 🚀
 
@@ -49,9 +49,9 @@ You can install Film2Trakt in several ways:
     - Clone this repository or download the files.
     - Open Chrome and navigate to `chrome://extensions`.
     - Enable "Developer mode".
-    - Click "Load unpacked" and select the root folder of the repository (where `manifest.json` is located).
+    - Click "Load unpacked" and select the `src` folder inside the repository (where `manifest.json` is located).
 
-For more detailed development environment setup instructions and prerequisites, please refer to [Setup and Installation.md](./docs/07_setup_and_installation.md).
+For more detailed development environment setup instructions and prerequisites, please refer to [Engineering Guidelines (Setup & Installation)](./docs/02_engineering_guidelines.md#setup--installation).
 
 ## Usage 🎬
 
@@ -65,24 +65,23 @@ Using Film2Trakt is very simple:
 
 3.  Click the button. A new tab will open, displaying the search results for that title on Trakt.tv.
 
-For a more complete step-by-step usage guide and basic troubleshooting, please refer to [Usage Guide](docs/08_usage_guide.md).
-
 ## Technologies Used 💻
 
 Film2Trakt is built using the following technologies:
 
 - **JavaScript:** For the main extension logic, title extraction, and interaction with the FilmAffinity DOM.
 - **CSS:** For styling the button and ensuring its visual integration with FilmAffinity.
-- **Chrome Extension API:** For extension functionality, permissions, and tab handling.
+- **Chrome Extension API (Manifest V3):** For extension configuration, permissions, and content script injection.
 - **Chrome Extension i18n API:** For managing internationalization of texts.
 
-For a more detailed justification of the choice of these technologies, you can consult [Tech Stack](docs/05_tech-stack.md).
+For a more detailed justification of the choice of these technologies, you can consult [Engineering Guidelines (Tech Stack)](./docs/02_engineering_guidelines.md#tech-stack).
 
 ## Project Documentation 📚
 
 This project is thoroughly documented to provide a complete understanding of its architecture, features, and implementation. Whether you are a user, developer, or just curious, we invite you to explore our knowledge hub.
 
-For a complete index of all documentation, please refer to the [Documentation Index](./docs/00_documentation_index.md).
+- **[Project Blueprint](./docs/01_project_blueprint.md):** Vision, objectives, functional/non-functional requirements, and feature specifications.
+- **[Engineering Guidelines](./docs/02_engineering_guidelines.md):** Technical architecture, Mermaid data flow diagram, tech stack, local setup, and code style guide.
 
 ## Contributing 👋
 
