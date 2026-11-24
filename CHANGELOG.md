@@ -8,16 +8,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-- Local panoramic repository banner and circular author avatar under `.github/assets/`.
+- Local panoramic repository banner, circular author avatar, and UI screenshot under `.github/assets/`.
 - Standard OS, dependency, and build exclusion patterns in `.gitignore`.
+- English localization bundle (`src/_locales/en/messages.json`) and content script support for `https://www.filmaffinity.com/en/film*.html`.
+- Open Shadow DOM encapsulation for the injected search button and non-intrusive, auto-dismissible error toast notifications (`src/assets/css/content.css`), with `:focus-visible` and `prefers-reduced-motion` accessibility support.
+- Fallback title extraction from direct `h1#main-title` text nodes, `og:type` / `document.title` series-detection fallbacks, `https://trakt.tv` URL validation, and `AbortController` cleanup on `pagehide`.
 
 ### Changed
 
-- Consolidated legacy 12-file `/docs` documentation into `01_project_blueprint.md` and `02_engineering_guidelines.md`.
-- Regenerated `README.md` in Showcase / Authority format aligned with the `v1.0.4` codebase.
+- Reorganized `src/` to Chrome Extensions v4.0 layout (`src/assets/js/content.js`, `src/assets/css/content.css`, `src/assets/brand/` icons) and updated `src/manifest.json` to HTTPS-only `content_scripts` at `document_idle` with hardened `web_accessible_resources` (`use_dynamic_url: true`).
+- Hardened `window.open` with `"noopener,noreferrer"`, froze centralized selector/config maps (`Object.freeze`), and replaced blocking `alert()` dialogs with localized Shadow DOM toasts.
+- Consolidated legacy 12-file `/docs` documentation into `01_project_blueprint.md` and `02_engineering_guidelines.md`, and regenerated `README.md` in Showcase / Authority format.
+
+### Fixed
+
+- Guarded against duplicate button injections (`[data-fa2trakt-root="button"]`), missing inner `<span>` inside `h1#main-title`, unlocalized missing-title errors, non-boolean returns from `isFilmaffinitySeries()`, click-handler error cascades, and host `:root` CSS variable pollution.
 
 ### Removed
 
+- Unused `activeTab` install-time permission from `src/manifest.json`.
 - Deprecated legacy documentation files (`docs/00_documentation_index.md` through `docs/09_code_style_guide.md`).
 - Unused community templates (`CONTRIBUTION_GUIDELINES.md` and `CODE_OF_CONDUCT.md`).
 
