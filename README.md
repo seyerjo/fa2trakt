@@ -147,7 +147,7 @@ Licensed under the **Apache-2.0** License — see **[LICENSE](./LICENSE)** for d
 
 <p>
   <a href="https://github.com/seyerjo">
-    <img src="./.github/assets/avatar.png" width="84" align="left" alt="Jose Miguel Reyes" />
+    <img src="./.github/assets/avatar.png" width="100" align="left" alt="Jose Miguel Reyes" />
   </a>
   <strong>Jose Miguel Reyes</strong><br />
   Senior IT Consultant, CTO/CIO, and Full Stack Developer focused on Data Analytics, AI, and clean software engineering.
