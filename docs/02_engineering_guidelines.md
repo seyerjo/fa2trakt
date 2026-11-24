@@ -322,7 +322,7 @@ This subsection outlines the development approach, coding standards, timeline co
   - `develop`: The primary integration branch for ongoing development of upcoming features.
   - `feat/feature-name`: Branches for developing new features.
   - `fix/bug-description`: Branches for fixing bugs.
-  - Pull Requests (PRs) MUST be used to merge feature/fix branches into `develop` (and `develop` into `main` for releases), requiring review as per `CONTRIBUTION_GUIDELINES.md`.
+  - Pull Requests (PRs) MUST be used to merge feature/fix branches into `develop` (and `develop` into `main` for releases), requiring review before merging.
 - **Testing:** Manual testing is the primary method. Developers should test thoroughly during development using the "Load unpacked" method in Chrome across various FilmAffinity movie and series pages. Automated testing should be considered for future iterations.
 
 #### 2. Coding Standards

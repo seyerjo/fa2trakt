@@ -1,0 +1,18 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+
+# Dependencies & logs
+node_modules/
+npm-debug.log*
+*.log
+
+# Build & packaging outputs
+dist/
+build/
+*.zip
+*.crx
+*.pem
