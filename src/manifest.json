@@ -1,23 +1,32 @@
 {
-	"manifest_version": 3,
-	"name": "__MSG_appName__",
-	"version": "1.0.4",
-	"description": "__MSG_appDesc__",
-	"permissions": ["activeTab"],
-	"default_locale": "es",
-	"icons": {
-		"16": "assets/images/fa2trakt_ico_16px.png",
-		"48": "assets/images/fa2trakt_ico_48px.png",
-		"128": "assets/images/fa2trakt_ico_128px.png"
-	},
-	"content_scripts": [
-		{
-			"matches": ["*://www.filmaffinity.com/es/film*.html"],
-			"js": ["content_script.js"],
-			"css": ["styles/main.css"]
-		}
-	],
-	"content_security_policy": {
-		"extension_pages": "script-src 'self'; object-src 'self'"
-	}
+    "manifest_version": 3,
+    "name": "__MSG_appName__",
+    "version": "1.0.4",
+    "description": "__MSG_appDesc__",
+    "default_locale": "es",
+    "icons": {
+        "16": "assets/brand/fa2trakt_ico_16px.png",
+        "48": "assets/brand/fa2trakt_ico_48px.png",
+        "128": "assets/brand/fa2trakt_ico_128px.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.filmaffinity.com/es/film*.html",
+                "https://www.filmaffinity.com/en/film*.html"
+            ],
+            "js": ["assets/js/content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/css/content.css"],
+            "matches": ["https://www.filmaffinity.com/*"],
+            "use_dynamic_url": true
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
 }
