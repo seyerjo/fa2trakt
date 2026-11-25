@@ -127,7 +127,7 @@ This section explains the reasoning behind the technology choices made for the F
 
 - **Git:** ([Download Git](https://git-scm.com/downloads))
 - **Google Chrome:** ([Download Chrome](https://www.google.com/chrome/))
-- **(Optional) Node.js / Python 3:** Used for local syntax checks, behavioral tests, and `.releases/` packaging.
+- **(Optional) Node.js / Python 3:** Used for local syntax checks, behavioral tests, and local release packaging.
 
 #### Steps
 
@@ -164,7 +164,7 @@ _(Intended installation method once published to the Chrome Web Store.)_
 
 #### 1. General Principles
 
-- Adhere strictly to Chrome Extensions v4.0 standards (MV3, least privilege, Shadow DOM isolation, zero-trust security).
+- Adhere strictly to modern Chrome Manifest V3 standards (least privilege, Shadow DOM isolation, zero-trust security).
 - Write all code, identifiers, JSDoc, comments, and documentation in **English**.
 
 #### 2. Code Structure & Style
@@ -202,16 +202,16 @@ _(Intended installation method once published to the Chrome Web Store.)_
 #### 1. Development Approach
 
 - **v1.0.x:** Core MVP functionality for Spanish FilmAffinity pages.
-- **v1.1 (Current):** Chrome Extensions v4.0 alignment, Shadow DOM UI (button + toast), zero install-time permissions, security hardening, idempotency, and English (`/en/`) support.
+- **v1.1 (Current):** Modern Chrome Manifest V3 alignment, Shadow DOM UI (button + toast), zero install-time permissions, security hardening, idempotency, and English (`/en/`) support.
 - **v2.0 (Planned):** Background Service Worker (`type: "module"`), `chrome.tabs.create`, Trakt API OAuth 2.0, `chrome.storage`, and `options.html`.
 
 #### 2. Branching Strategy
 
-- `main`: Stable branch; never merge feature/topic branches without explicit user approval.
+- `main`: Stable branch; merge feature and topic branches only after review and verification.
 - Dedicated task branches created from `main` for every change: `feature/<name>`, `refactor/<name>`, `fix/<name>`, or `chore/<name>`.
 - Follow Conventional Commits (`<type>(<scope>): <imperative lowercase summary>` <= 72 chars).
 
 #### 3. Testing & Code Review
 
-- Run syntax checks (`node --check src/assets/js/content.js`), JSON/i18n parity checks, behavioral DOM/VM checks, and manifest/asset validation before proposing a merge.
+- Run syntax checks (`node --check src/assets/js/content.js`), JSON/i18n parity checks, behavioral DOM/VM checks, and manifest/asset validation before merging into `main`.
 - Perform live Chrome smoke tests via **Load unpacked** on both `/es/film*.html` and `/en/film*.html` movie and series pages before cutting a release.

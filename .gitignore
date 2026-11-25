@@ -15,4 +15,10 @@ dist/
 build/
 *.zip
 *.crx
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.key
 *.pem
